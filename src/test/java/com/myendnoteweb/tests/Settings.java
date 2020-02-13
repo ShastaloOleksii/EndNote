@@ -2,22 +2,22 @@ package com.myendnoteweb.tests;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Settings {
+public class Settings{
     public ChromeDriver driver;
 
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
-
     }
-
-    public void start() {
+    public  void start() {
         driver.get("https://access.clarivate.com/login?app=endnote");
         driver.manage().window().maximize();
         driver.findElement(By.id("mat-input-0")).sendKeys("abunudonn-0963@yopmail.com");
