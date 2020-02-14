@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 
 import java.util.concurrent.TimeUnit;
 
-public class SignOut extends  Settings {
+public class SignOut extends Settings {
 
     @Test
-    public  void  signOut(){
+    public void signOut() {
 
 
         start();

@@ -7,15 +7,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Panel extends  Settings {
+public class Panel extends Settings {
     @Test
-    public  void panel(){
+    public void panel() {
         Integer waitTime = 20;
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         start();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"sidepanel\"]/form")));
-        String name = driver.findElement(By.name("citationSearchForm")).getText();
-        Assert.assertTrue(true,name);
+        driver.findElement(By.name("citationSearchForm")).isDisplayed();
+
 
 
     }
