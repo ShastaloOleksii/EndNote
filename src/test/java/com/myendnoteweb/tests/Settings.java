@@ -6,11 +6,14 @@ import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class Settings{
     public ChromeDriver driver;
+
+
 
     @Before
     public void setUp() {
