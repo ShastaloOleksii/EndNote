@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- TestNG configuration -->
+<suite name="Cross Browser  Suite">
+    <test name="Auth Tests Chrome">
+        <parameter name="browser" value="chrome"/>
+        <packages>
+            <package name="com.myendnoteweb.tests"/>
+        </packages>
+        <classes>
+            <class name="com.myendnoteweb.tests.Settings"/>
+        </classes>
+    </test>
+
+</suite>
