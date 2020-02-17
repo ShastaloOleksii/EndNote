@@ -1,31 +1,37 @@
 package com.myendnoteweb.tests;
 
+import com.myendnoteweb.MainPage;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Panel extends Settings {
+public class Panel extends MainPage {
+    WebDriverWait wait;
+
     @Test
     public void panel() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[contains(@name,'citation')]")));
-        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@class,'sideHead')]")).isDisplayed());
+        signIN();
+        Assert.assertTrue(isWebElementDisplayed("//div[contains(@class,'sideHead')]"));
     }
+
 
     @Test
     public void hidePanel() {
-        if (driver.findElement(By.xpath("//*[@id=\"sidepanel\"]/form")).isDisplayed()) {
+        signIN();
+        Assert.assertTrue(isWebElementDisplayed(".//form[contains(@name, 'citationSearchForm')]"));
+        /*if (driver.findElement(By.xpath("//*[@id=\"sidepanel\"]/form")).isDisplayed()) {
             System.out.println("Pannel is present the test fail");
         } else {
             System.out.println("Panel is absent, test is passed");
-        }
+        }*/
     }
 
     @Test
     public void unFiled() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"idGuideLink\"]/a")));
-        driver.findElement(By.xpath("//*[@id=\"idFolderLink_1\"]/a")).click();
-        driver.findElement(By.xpath("//*[@id=\"idFoderDesc\"]")).isDisplayed();
+        signIN();
+        driver.findElement(By.xpath(".//a[contains(@title,'View references not in a group')]")).click();
+        driver.findElement(By.xpath(".//td[contains(@class,'heading')] ")).isDisplayed();
 
     }
 }

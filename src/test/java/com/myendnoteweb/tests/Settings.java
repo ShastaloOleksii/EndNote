@@ -13,12 +13,11 @@ import java.util.concurrent.TimeUnit;
 public class Settings {
 
     public ChromeDriver driver;
-    WebElement webEl;
     Integer waitTime = 20;
     WebDriverWait wait;
 
 
-    @Before
+
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -34,9 +33,9 @@ public class Settings {
         System.out.println("Press button");
     }
 
-    @After
+
     public void close() {
-        //  driver.quit();
+         //driver.quit();
     }
 
     public boolean isWebElementPresent(String xpath) {

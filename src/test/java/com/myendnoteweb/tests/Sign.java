@@ -1,22 +1,25 @@
 package com.myendnoteweb.tests;
 
+import com.myendnoteweb.MainPage;
 import org.junit.*;
 import org.openqa.selenium.By;
 
 
-public class Sign extends Settings {
+public class Sign extends MainPage {
 
 
     @Test
     public void signIn() {
-        Assert.assertTrue(driver.findElement(By.xpath("//td[contains(@class,'heading')]")).isDisplayed());
+        signIN();
+        Assert.assertTrue(isWebElementDisplayed("//td[contains(@class,'heading')]"));
     }
 
     @Test
     public void signOut() {
-        driver.findElement(By.xpath("//img[@id='proSmallImg']")).click();
-        driver.findElement(By.xpath("//a[contains(@target,'self')]")).click();
-        Assert.assertTrue(driver.findElement(By.id("mat-input-0")).isDisplayed());
+        signIN();
+        clickByXpath("//img[@id='proSmallImg']");
+        clickByXpath("//a[contains(@target,'self')]");
+        Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
 
     }
 
