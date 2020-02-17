@@ -36,7 +36,7 @@ public class Settings {
 
     @After
     public void close() {
-        //  driver.quit();
+         driver.quit();
     }
 
     public boolean isWebElementPresent(String xpath) {
