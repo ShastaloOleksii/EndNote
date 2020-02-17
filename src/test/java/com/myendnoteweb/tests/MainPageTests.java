@@ -13,7 +13,7 @@ public class MainPageTests extends MainPage {
     public void mainPageApprove() {
         signIN();
         clickByXpath(".//img[@id='proSmallImg']");
-        Assert.assertTrue(isWebElementDisplayed("//span[contains(@class,'fa-cog')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath("//span[contains(@class,'fa-cog')]"));
 
     }
 
@@ -26,7 +26,7 @@ public class MainPageTests extends MainPage {
     @Test
     public void mainTabsMenu() {
         signIN();
-        Assert.assertTrue(isWebElementDisplayed("//div[contains(@class,'navbar-default')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'navbar-default')]"));
     }
 
     /*@Test
@@ -38,7 +38,7 @@ public class MainPageTests extends MainPage {
     @Test
     public void logoPresent() {
         signIN();
-        Assert.assertTrue(isWebElementDisplayed("//img[contains(@alt,'Clarivate Analytics')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath("//img[contains(@alt,'Clarivate Analytics')]"));
 
     }
    /* @Test

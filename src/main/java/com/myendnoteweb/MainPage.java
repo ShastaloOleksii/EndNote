@@ -1,6 +1,7 @@
 package com.myendnoteweb;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -42,8 +43,11 @@ public class MainPage extends BasePage {
     public void title() {
         showGetting.isDisplayed();
     }
+    public void equals(String text, String xpath) {
+        
+    }
 
-    public boolean isWebElementDisplayed(String xpath) {
+    public boolean isWebElementDisplayedXpath(String xpath) {
         try {
             driver.findElement(By.xpath(xpath));
             System.out.println("All ok, relax");

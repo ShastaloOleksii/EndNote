@@ -1,26 +1,26 @@
 package com.myendnoteweb.tests;
 
+import com.myendnoteweb.MainPage;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class MainTabs extends Settings {
-    @Before
-    public void waIt() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'navbar-default')]")));
-    }
+public class MainTabs extends MainPage {
+
 
     @Test
     public void myRef() {
-        driver.findElement(By.id("lgLink1")).click();
-        Assert.assertTrue(driver.findElement(By.xpath("//a[contains(text(), 'Show Getting')]")).isDisplayed());
+        signIN();
+        clickById("lgLink1");
+        Assert.assertTrue(isWebElementDisplayedXpath("//a[contains(text(), 'Show Getting')]"));
     }
 
     @Test
     public void collect() {
-        driver.findElement(By.id("lgLink2")).click();
+        signIN();
+        clickById("lgLink2");
         String str = driver.findElement(By.xpath("//div[contains(@class,'heading')]")).getText();
         Assert.assertEquals(str, "Online Search");
     }
@@ -32,7 +32,8 @@ public class MainTabs extends Settings {
     }
     @Test
     public void format() {
-        driver.findElement(By.id("lgLink4")).click();
+        signIN();
+        clickById("lgLink4");
         String str = driver.findElement(By.xpath("//div[contains(@class,'heading')]")).getText();
         Assert.assertEquals(str, "Bibliography");
     }
