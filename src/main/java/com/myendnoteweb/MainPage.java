@@ -1,25 +1,15 @@
 package com.myendnoteweb;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class MainPage extends BasePage {
 
-    /*private  MainPage(){
-
-    }
-    public  static MainPage(driver){
-        MainPage mp = new MainPage();
-        PageFactory.initElements(driver, mp);
-    }*/
     @FindBy(xpath = ".//img[@id='proSmallImg']")
     public WebElement personProSmallImg;
 
@@ -29,34 +19,23 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//a[contains(text(), 'Show Getting')]")
     public WebElement showGetting;
 
-    @FindBy(xpath = ".//span[contains(@class,'fa-cog')]")
-    public WebElement logo;
 
     public void clickByXpath(String xpath) {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, this);
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         driver.findElement(By.xpath(xpath)).click();
 
     }
 
     public void clickById(String id) {
+        PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
         driver.findElement(By.id(id)).click();
 
     }
 
-    public void isDispl() {
-        logOutRef.isDisplayed();
-    }
-
-    public void title() {
-        showGetting.isDisplayed();
-    }
-
-    public void equals(String text, String xpath) {
-
-    }
 
     public boolean isWebElementDisplayedXpath(String xpath) {
         try {
@@ -92,26 +71,5 @@ public class MainPage extends BasePage {
         driver.findElement(By.xpath("//button[contains(@class,'btn--login')]  ")).click();
         System.out.println("Press button");
     }
-   /* public void waiter(String xpath){
-        WebDriverWait waitForOne = new WebDriverWait(driver, 10);
-        waitForOne.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
-    }
-*/
-    // Waiting for web element appearance during waitTime
-    /*protected void waitUntilElementIsVisible(Integer waitTime, WebElement webElement) {
-        WebDriverWait wait = new WebDriverWait(driver, waitTime);
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
 
-    protected boolean isWebElementDisplayed(WebElement webElement) {
-        return webElement.isDisplayed();
-    }
-
-    protected boolean isWebElementSelected(WebElement webElement) {
-        return webElement.isSelected();
-    }
-
-    protected boolean isWebElementEnabled(WebElement webElement) {
-        return webElement.isEnabled();
-    }*/
 }

@@ -15,16 +15,11 @@ public class PanelTests extends MainPage {
         Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'sideHead')]"));
     }
 
-
     @Test
     public void hidePanel() {
         signIN();
         Assert.assertTrue(isWebElementDisplayedXpath(".//form[contains(@name, 'citationSearchForm')]"));
-        /*if (driver.findElement(By.xpath("//*[@id=\"sidepanel\"]/form")).isDisplayed()) {
-            System.out.println("Pannel is present the test fail");
-        } else {
-            System.out.println("Panel is absent, test is passed");
-        }*/
+
     }
 
     @Test

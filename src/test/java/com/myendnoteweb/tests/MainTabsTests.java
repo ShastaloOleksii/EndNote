@@ -4,7 +4,6 @@ import com.myendnoteweb.MainPage;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class MainTabsTests extends MainPage {

@@ -2,8 +2,6 @@ package com.myendnoteweb;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -29,7 +27,7 @@ public class BasePage {
 
     @After
     public void close() {
-        //driver.quit();
+        driver.quit();
     }
 
 
