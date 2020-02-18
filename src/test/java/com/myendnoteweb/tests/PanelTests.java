@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Panel extends MainPage {
+public class PanelTests extends MainPage {
     WebDriverWait wait;
 
     @Test

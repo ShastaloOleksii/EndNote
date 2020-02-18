@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class MainTabs extends MainPage {
+public class MainTabsTests extends MainPage {
 
 
     @Test

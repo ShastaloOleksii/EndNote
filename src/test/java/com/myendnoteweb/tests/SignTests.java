@@ -4,7 +4,7 @@ import com.myendnoteweb.MainPage;
 import org.junit.*;
 
 
-public class Sign extends MainPage {
+public class SignTests extends MainPage {
 
 
     @Test
