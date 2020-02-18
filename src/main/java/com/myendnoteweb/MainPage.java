@@ -1,21 +1,28 @@
 package com.myendnoteweb;
 
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class MainPage extends BasePage {
-    WebDriverWait wait;
 
-   /* @FindBy(xpath = ".//img[@id='proSmallImg']")
+    /*private  MainPage(){
+
+    }
+    public  static MainPage(driver){
+        MainPage mp = new MainPage();
+        PageFactory.initElements(driver, mp);
+    }*/
+    @FindBy(xpath = ".//img[@id='proSmallImg']")
     public WebElement personProSmallImg;
-*/
+
     @FindBy(xpath = ".//span[contains(@class,'fa-cog')]")
     public WebElement logOutRef;
 
@@ -27,11 +34,14 @@ public class MainPage extends BasePage {
 
     public void clickByXpath(String xpath) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         driver.findElement(By.xpath(xpath)).click();
 
     }
+
     public void clickById(String id) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
         driver.findElement(By.id(id)).click();
 
     }
@@ -43,8 +53,9 @@ public class MainPage extends BasePage {
     public void title() {
         showGetting.isDisplayed();
     }
+
     public void equals(String text, String xpath) {
-        
+
     }
 
     public boolean isWebElementDisplayedXpath(String xpath) {
@@ -59,6 +70,7 @@ public class MainPage extends BasePage {
 
         }
     }
+
     public boolean isWebElementDisplayedID(String id) {
         try {
             driver.findElement(By.id(id));
@@ -70,6 +82,7 @@ public class MainPage extends BasePage {
 
         }
     }
+
     public void signIN() {
         driver.findElement(By.id("mat-input-0")).sendKeys("abunudonn-0963@yopmail.com");
         System.out.println("Login");
