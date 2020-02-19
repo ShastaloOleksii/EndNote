@@ -22,8 +22,8 @@ public class MainPage extends BasePage {
 
     public void clickByXpath(String xpath) {
         PageFactory.initElements(driver, this);
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         driver.findElement(By.xpath(xpath)).click();
 
     }
@@ -31,7 +31,7 @@ public class MainPage extends BasePage {
     public void clickById(String id) {
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+        //wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
         driver.findElement(By.id(id)).click();
 
     }
@@ -63,7 +63,7 @@ public class MainPage extends BasePage {
     }
 
     public void signIN() {
-        driver.findElement(By.id("mat-input-0")).sendKeys("abunudonn-0963@yopmail.com");
+        driver.findElement(By.id("mat-input-0")).sendKeys("igavudu-5763@yopmail.com");
         System.out.println("Login");
         driver.findElement(By.id("mat-input-1")).sendKeys("A123456@");
         System.out.println("Password");

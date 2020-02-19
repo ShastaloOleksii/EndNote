@@ -2,21 +2,15 @@ package com.myendnoteweb.tests;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NotFoundException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class FatherXPath {
     protected WebDriver driver;
     @Before
-    public void setUp() throws InterruptedException {
+    public void setUp(){
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -52,18 +46,20 @@ public class FatherXPath {
         System.out.println(str);
 
     }
-    public boolean trueFalse(String bool){
-        System.out.println("Method was started");
-        try {
-            System.out.println(driver.findElement(By.xpath(bool)));
-            driver.findElement(By.xpath(bool));
-            return true;
-        }
-        catch (NotFoundException e){
-            System.out.println("problem...");
-            return false;
-        }
-    }
 
+
+    public boolean isWebElementDisplayedXpath(String xpath) {
+        try {
+            driver.findElement(By.xpath(xpath));
+            System.out.println("All ok, relax");
+            return true;
+
+        } catch (NoSuchElementException e) {
+            System.out.println("The test is fail, web element is absent on the page");
+            return false;
+
+        }
+
+    }
     }
 
