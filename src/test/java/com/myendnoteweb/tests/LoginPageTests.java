@@ -16,8 +16,8 @@ public class LoginPageTests extends MainPage {
     @Test
     public void signOut() {
         signIN();
-        clickByXpath("//img[@id='proSmallImg']");
-        clickByXpath("//a[contains(@target,'self')]");
+        click(personProSmallImg);
+        click(logOutRef);
         Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
 
     }

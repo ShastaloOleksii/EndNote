@@ -9,7 +9,7 @@ public class OptionsTabTests extends MainPage {
     @Test
     public void loginClickOnTheOptionsTabHeadingIsPresent() {
         signIN();
-        clickById("lgLink6");
+        click(options);
         Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'heading')]"));
     }
 

@@ -9,8 +9,7 @@ public class CollectTabTests extends MainPage {
     @Test
     public void loginClickOnTheCollectTabHeadingIsPresent() {
         signIN();
-        clickById("lgLink2");
-        String str = driver.findElement(By.xpath("//div[contains(@class,'heading')]")).getText();
-        Assert.assertEquals(str, "Online Search");
+        click(collectTab);
+        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
     }
 }

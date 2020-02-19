@@ -10,15 +10,14 @@ public class MainPageTests extends MainPage {
     @Test
     public void loginMainPageIsOpened() {
         signIN();
-        clickByXpath(".//img[@id='proSmallImg']");
-        Assert.assertTrue(isWebElementDisplayedXpath("//span[contains(@class,'fa-cog')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
 
     }
 
     @Test
     public void loginClickOnTheMyReferencesTabHeadingIsPresent() {
         signIN();
-        clickById("lgLink1");
+        click(myReferencesTab);
         Assert.assertTrue(isWebElementDisplayedXpath("//a[contains(text(), 'Show Getting')]"));
     }
 

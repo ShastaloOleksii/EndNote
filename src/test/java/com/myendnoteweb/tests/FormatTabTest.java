@@ -9,8 +9,7 @@ public class FormatTabTest extends MainPage {
     @Test
     public void loginClickOnTheFormatTabHeadingIsPresent() {
         signIN();
-        clickById("lgLink4");
-        String str = driver.findElement(By.xpath("//div[contains(@class,'heading')]")).getText();
-        Assert.assertEquals(str, "Bibliography");
+        click(formatTab);
+        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
     }
 }

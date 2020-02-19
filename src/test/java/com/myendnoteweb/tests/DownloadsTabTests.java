@@ -9,7 +9,7 @@ public class DownloadsTabTests extends MainPage {
     @Test
     public void loginClickOnTheDownloadsTabHeadingIsPresent() {
         signIN();
-        clickById("lgLink7");
-        Assert.assertTrue(driver.findElement(By.xpath("//table[contains(@class,'contnav_lower')]")).isDisplayed());
+        click(downloadsTab);
+        Assert.assertTrue(isWebElementDisplayedXpath("//table[contains(@class,'contnav_lower')]"));
     }
 }
