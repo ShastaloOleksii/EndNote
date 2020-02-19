@@ -22,7 +22,7 @@ public class PanelTests extends MainPage {
     @Test
     public void linUnFiledIsPresent() {
         signIN();
-        clickByXpath(".//a[contains(@title,'View references not in a group')]");
+        click(unfiled);
         Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@class,'heading')] "));
 
     }

@@ -4,7 +4,7 @@ import com.myendnoteweb.MainPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NotTravialTests extends MainPage {
+public class NotTrivialTests extends MainPage {
     @Test
     public void allMyReferencesTitleIsPresentAfterClick() {
         signIN();
@@ -12,7 +12,7 @@ public class NotTravialTests extends MainPage {
             System.out.println("Show Getting Started Guide");
         } else {
             System.out.println("Hide Getting Started Guide");
-            clickByXpath(".//a[contains(text(), 'Hide Getting Started Guide')]");
+            click(hideGettingStartedGuide);
         }
         Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(text(), 'All My References')]"));
     }
@@ -20,15 +20,15 @@ public class NotTravialTests extends MainPage {
     @Test
     public void loginClickOnTheFormatTabClickOnTheLogoMainPageOpened() {
         signIN();
-        clickById("lgLink4");
-        clickByXpath(".//img[contains(@alt,'Clarivate Analytics')]");
-        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting')]"));
+        click(formatTab);
+        click(logo);
+        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
     }
     @Test
     public void loginClickOnTheFormatTabClickOnTheMyReferencesMainPageOpened() {
         signIN();
-        clickById("lgLink4");
-        clickById("lgLink1");
-        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting')]"));
+        click(formatTab);
+        click(myReferencesTab);
+        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
     }
 }

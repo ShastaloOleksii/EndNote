@@ -3,9 +3,7 @@ package com.myendnoteweb.tests;
 import com.myendnoteweb.MainPage;
 import org.junit.*;
 
-
 public class LoginPageTests extends MainPage {
-
 
     @Test
     public void signIn() {
@@ -16,8 +14,8 @@ public class LoginPageTests extends MainPage {
     @Test
     public void signOut() {
         signIN();
-        clickByXpath("//img[@id='proSmallImg']");
-        clickByXpath("//a[contains(@target,'self')]");
+        click(personProSmallImg);
+        click(logOutRef);
         Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
 
     }
