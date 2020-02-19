@@ -1,10 +1,10 @@
 package com.myendnoteweb;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -36,7 +36,6 @@ public class MainPage extends BasePage {
 
     }
 
-
     public boolean isWebElementDisplayedXpath(String xpath) {
         try {
             driver.findElement(By.xpath(xpath));
@@ -46,7 +45,6 @@ public class MainPage extends BasePage {
         } catch (NoSuchElementException e) {
             System.out.println("The test is fail, web element is absent on the page");
             return false;
-
         }
     }
 
@@ -58,7 +56,6 @@ public class MainPage extends BasePage {
         } catch (NoSuchElementException e) {
             System.out.println("The test is fail, web element is absent on the page");
             return false;
-
         }
     }
 

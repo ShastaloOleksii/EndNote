@@ -27,7 +27,6 @@ public class BasePage {
 
     @After
     public void close() {
-
         driver.quit();
     }
 
