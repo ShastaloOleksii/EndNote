@@ -4,7 +4,7 @@ import com.myendnoteweb.MainPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NotTravialTests extends MainPage {
+public class NotTrivialTests extends MainPage {
     @Test
     public void allMyReferencesTitleIsPresentAfterClick() {
         signIN();

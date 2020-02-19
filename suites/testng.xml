@@ -6,10 +6,10 @@
     <test name="Auth Tests Chrome">
         <parameter name="browser" value="chrome"/>
         <packages>
-            <package name="com.myendnoteweb.tests"/>
+            <package name="com.myendnoteweb"/>
         </packages>
         <classes>
-            <class name="com.myendnoteweb.tests.Settings"/>
+            <class name="com.myendnoteweb.MainPage"/>
         </classes>
     </test>
 

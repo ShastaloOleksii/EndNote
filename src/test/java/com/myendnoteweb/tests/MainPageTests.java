@@ -6,7 +6,6 @@ import org.testng.Assert;
 
 public class MainPageTests extends MainPage {
 
-
     @Test
     public void loginMainPageIsOpened() {
         signIN();

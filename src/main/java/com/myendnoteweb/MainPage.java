@@ -4,11 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+
 public class MainPage extends BasePage {
+
+
+
+
 
     @FindBy(xpath = ".//img[@id='proSmallImg']")
     public WebElement personProSmallImg;
@@ -71,21 +77,6 @@ public class MainPage extends BasePage {
         web.click();
     }
 
-    public void clickByXpath(String xpath) {
-        PageFactory.initElements(driver, this);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        driver.findElement(By.xpath(xpath)).click();
-
-    }
-
-    public void clickById(String id) {
-        PageFactory.initElements(driver, this);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.findElement(By.id(id)).click();
-
-    }
-
     public boolean isWebElementDisplayedXpath(String xpath) {
         try {
             driver.findElement(By.xpath(xpath));
@@ -110,9 +101,9 @@ public class MainPage extends BasePage {
     }
 
     public void signIN() {
-        loginField.sendKeys("igavudu-5763@yopmail.com");
+        loginField.sendKeys(login);
         System.out.println("Login");
-        passwordField.sendKeys("A123456@");
+        passwordField.sendKeys(password);
         System.out.println("Password");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         buttonLogIn.click();

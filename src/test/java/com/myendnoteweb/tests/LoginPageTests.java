@@ -3,9 +3,7 @@ package com.myendnoteweb.tests;
 import com.myendnoteweb.MainPage;
 import org.junit.*;
 
-
 public class LoginPageTests extends MainPage {
-
 
     @Test
     public void signIn() {
