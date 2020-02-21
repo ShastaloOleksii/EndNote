@@ -1,10 +1,15 @@
 package com.myendnoteweb.tests;
 
-import com.myendnoteweb.MainPage;
+import com.myendnoteweb.pages.MainPage;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
 public class NotTrivialTests extends MainPage {
+    public NotTrivialTests(WebDriver driver) {
+        super(driver);
+    }
+
     @Test
     public void allMyReferencesTitleIsPresentAfterClick() {
         signIN();

@@ -1,20 +1,18 @@
-package com.myendnoteweb;
+package com.myendnoteweb.pages;
 
-import org.openqa.selenium.By;
+import com.myendnoteweb.base.BasePage;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.FileInputStream;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
 public class MainPage extends BasePage {
-
-
-
-
+    //int timeout;
+    // WebDriverWait wait = new WebDriverWait(driver, timeout);
 
     @FindBy(xpath = ".//img[@id='proSmallImg']")
     public WebElement personProSmallImg;
@@ -73,31 +71,14 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//a[contains(@title,'View references not in a group')]")
     public WebElement unfiled;
 
-    public void click(WebElement web) {
-        web.click();
-    }
+    @FindBy(xpath = ".//div[contains(@id,'idError') and .//a[contains(@title,'Learn')]]")
+    public WebElement learnAboutEndNote;
 
-    public boolean isWebElementDisplayedXpath(String xpath) {
-        try {
-            driver.findElement(By.xpath(xpath));
-            System.out.println("All ok, relax");
-            return true;
+    @FindBy(xpath = ".//button[contains(@class,'mat-stroked')]")
+    public WebElement registrationButton;
 
-        } catch (NoSuchElementException e) {
-            System.out.println("The test is fail, web element is absent on the page");
-            return false;
-        }
-    }
-
-    public boolean isWebElementDisplayedID(String id) {
-        try {
-            driver.findElement(By.id(id));
-            System.out.println("All ok, relax");
-            return true;
-        } catch (NoSuchElementException e) {
-            System.out.println("The test is fail, web element is absent on the page");
-            return false;
-        }
+    public MainPage(WebDriver driver) {
+        super(driver);
     }
 
     public void signIN() {
@@ -105,9 +86,17 @@ public class MainPage extends BasePage {
         System.out.println("Login");
         passwordField.sendKeys(password);
         System.out.println("Password");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         buttonLogIn.click();
         System.out.println("Press button");
     }
 
+    public boolean waitForVisible(WebElement web) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(web));
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+
+    }
 }

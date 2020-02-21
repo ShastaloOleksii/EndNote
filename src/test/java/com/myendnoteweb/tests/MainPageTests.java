@@ -1,10 +1,14 @@
 package com.myendnoteweb.tests;
 
-import com.myendnoteweb.MainPage;
+import com.myendnoteweb.pages.MainPage;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class MainPageTests extends MainPage {
+    public MainPageTests(WebDriver driver) {
+        super(driver);
+    }
 
     @Test
     public void loginMainPageIsOpened() {
@@ -38,5 +42,11 @@ public class MainPageTests extends MainPage {
         signIN();
         Assert.assertTrue(isWebElementDisplayedID("languages1"));
 
+    }
+
+    @Test
+    public void loginLearnAboutEndNoteAttributes() {
+        signIN();
+        Assert.assertTrue(attributes(learnAboutEndNote, "class"));
     }
 }
