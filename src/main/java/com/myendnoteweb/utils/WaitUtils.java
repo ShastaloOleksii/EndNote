@@ -16,7 +16,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(web));
             return true;
-        } catch (NullPointerException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -25,7 +25,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.visibilityOf(web));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
 
@@ -36,7 +36,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.titleIs(title));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -45,7 +45,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.alertIsPresent());
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -54,7 +54,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.elementToBeSelected(web));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -63,7 +63,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
 
@@ -73,7 +73,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.invisibilityOf(web));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -82,7 +82,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath(xpath), text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
 
@@ -92,7 +92,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.invisibilityOfAllElements(webElement));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -101,7 +101,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -110,7 +110,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.textToBePresentInElement(webElement, text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -119,7 +119,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(xpath), text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -128,7 +128,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.textToBePresentInElementValue(webElement, text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -137,7 +137,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.titleContains(text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -146,7 +146,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -155,7 +155,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.textToBe(By.xpath(xpath), text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -164,7 +164,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(webElement, By.id(id)));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -173,7 +173,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.not((ExpectedCondition<?>) webElement));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -182,7 +182,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.and((ExpectedCondition<?>) webElement));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -191,7 +191,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.attributeContains(webElement, attribute, text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -200,7 +200,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.attributeToBe(webElement, attribute, text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -209,7 +209,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.attributeToBeNotEmpty(webElement, text));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -218,7 +218,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.elementSelectionStateToBe(webElement, selected));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -227,7 +227,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -236,7 +236,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.javaScriptThrowsNoExceptions(javaScript));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -245,7 +245,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.jsReturnsValue(javaScript));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -254,7 +254,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath(xpath), number));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -263,7 +263,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath(xpath), number));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -272,7 +272,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(xpath), number));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -281,7 +281,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.numberOfWindowsToBe(number));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -290,7 +290,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.or((ExpectedCondition<?>) webElement));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -299,7 +299,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(webElement, By.id(childXpath)));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -308,7 +308,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.refreshed((ExpectedCondition<Object>) webElement));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -317,7 +317,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.stalenessOf(webElement));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -326,7 +326,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.textMatches(By.xpath(xpath), pattern));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -335,7 +335,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.urlContains(url));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -344,7 +344,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.urlMatches(url));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -353,7 +353,7 @@ public class WaitUtils {
         try {
             wait.until(ExpectedConditions.urlToBe(url));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
