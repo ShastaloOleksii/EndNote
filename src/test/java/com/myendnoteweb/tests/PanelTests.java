@@ -1,16 +1,10 @@
 package com.myendnoteweb.tests;
 
-import com.myendnoteweb.pages.MainPage;
+import com.myendnoteweb.pages.PanelPage;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class PanelTests extends MainPage {
-
-    public PanelTests(WebDriver driver) {
-        super(driver);
-    }
-
+public class PanelTests extends PanelPage {
     @Test
     public void panelQuickSearchIsPresent() {
         signIN();

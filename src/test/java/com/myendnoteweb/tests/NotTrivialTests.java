@@ -1,14 +1,12 @@
 package com.myendnoteweb.tests;
 
 import com.myendnoteweb.pages.MainPage;
+import com.myendnoteweb.pages.NotTrivialPage;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-public class NotTrivialTests extends MainPage {
-    public NotTrivialTests(WebDriver driver) {
-        super(driver);
-    }
+public class NotTrivialTests extends NotTrivialPage {
 
     @Test
     public void allMyReferencesTitleIsPresentAfterClick() {
@@ -33,6 +31,7 @@ public class NotTrivialTests extends MainPage {
     public void loginClickOnTheFormatTabClickOnTheMyReferencesMainPageOpened() {
         signIN();
         click(formatTab);
+
         click(myReferencesTab);
         Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
     }

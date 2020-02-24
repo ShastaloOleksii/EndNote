@@ -6,9 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class MainPageTests extends MainPage {
-    public MainPageTests(WebDriver driver) {
-        super(driver);
-    }
 
     @Test
     public void loginMainPageIsOpened() {
@@ -48,5 +45,12 @@ public class MainPageTests extends MainPage {
     public void loginLearnAboutEndNoteAttributes() {
         signIN();
         Assert.assertTrue(attributes(learnAboutEndNote, "class"));
+    }
+
+    @Test
+    public void sdvafv(){
+        signIN();
+        System.out.println(getAttribute(showGettingStartedGuide,"alt"));
+
     }
 }
