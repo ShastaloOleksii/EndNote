@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.regex.Pattern;
 
 public class WaitUtils {
@@ -12,349 +13,311 @@ public class WaitUtils {
     int timeout = 30;
     WebDriverWait wait = new WebDriverWait(driver, timeout);
 
-    public boolean waitElementToBeClickable(WebElement web) {
+    public void waitElementToBeClickable(WebElement web) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(web));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitVisibilityOf(WebElement web) {
+    public void waitVisibilityOf(WebElement web) {
         try {
             wait.until(ExpectedConditions.visibilityOf(web));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
 
     }
 
-    public boolean waitTitleIs(WebElement web) {
+    public void waitTitleIs(WebElement web) {
         String title = web.getText();
         try {
             wait.until(ExpectedConditions.titleIs(title));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitAlertIsPresent() {
+    public void waitAlertIsPresent() {
         try {
             wait.until(ExpectedConditions.alertIsPresent());
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitElementToBeSelected(WebElement web) {
+    public void waitElementToBeSelected(WebElement web) {
         try {
             wait.until(ExpectedConditions.elementToBeSelected(web));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitFrameToBeAvailableAndSwitchToIt(WebElement frame) {
+    public void waitFrameToBeAvailableAndSwitchToIt(WebElement frame) {
         try {
             wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
 
     }
 
-    public boolean waitInvisibilityOf(WebElement web) {
+    public void waitInvisibilityOf(WebElement web) {
         try {
             wait.until(ExpectedConditions.invisibilityOf(web));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitInvisibilityOfElementWithText(String xpath, String text) {
+    public void waitInvisibilityOfElementWithText(String xpath, String text) {
         try {
             wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath(xpath), text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
 
     }
 
-    public boolean waitVisibilityOfAllElements(WebElement webElement) {
+    public void waitVisibilityOfAllElements(WebElement webElement) {
         try {
             wait.until(ExpectedConditions.invisibilityOfAllElements(webElement));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitPresenceOfElementLocated(String xpath) {
+    public void waitPresenceOfElementLocated(String xpath) {
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitTextToBePresentInElement(WebElement webElement, String text) {
+    public void waitTextToBePresentInElement(WebElement webElement, String text) {
         try {
             wait.until(ExpectedConditions.textToBePresentInElement(webElement, text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitTextToBePresentInElementLocated(String xpath, String text) {
+    public void waitTextToBePresentInElementLocated(String xpath, String text) {
         try {
             wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(xpath), text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitTextToBePresentInElementValue(WebElement webElement, String text) {
+    public void waitTextToBePresentInElementValue(WebElement webElement, String text) {
         try {
             wait.until(ExpectedConditions.textToBePresentInElementValue(webElement, text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitTitleContains(String text) {
+    public void waitTitleContains(String text) {
         try {
             wait.until(ExpectedConditions.titleContains(text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitVisibilityOfAllElementsL(String xpath) {
+    public void waitVisibilityOfAllElementsL(String xpath) {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitTextToBe(String xpath, String text) {
+    public void waitTextToBe(String xpath, String text) {
         try {
             wait.until(ExpectedConditions.textToBe(By.xpath(xpath), text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitVisibilityOfNestedElementsLocatedBy(WebElement webElement, String id) {
+    public void waitVisibilityOfNestedElementsLocatedBy(WebElement webElement, String id) {
         try {
             wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(webElement, By.id(id)));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitNot(WebElement webElement) {
+    public void waitNot(WebElement webElement) {
         try {
             wait.until(ExpectedConditions.not((ExpectedCondition<?>) webElement));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitAnd(WebElement webElement) {
+    public void waitAnd(WebElement webElement) {
         try {
             wait.until(ExpectedConditions.and((ExpectedCondition<?>) webElement));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitAttributeContains(WebElement webElement, String attribute, String text) {
+    public void waitAttributeContains(WebElement webElement, String attribute, String text) {
         try {
             wait.until(ExpectedConditions.attributeContains(webElement, attribute, text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitAttributeToBe(WebElement webElement, String attribute, String text) {
+    public void waitAttributeToBe(WebElement webElement, String attribute, String text) {
         try {
             wait.until(ExpectedConditions.attributeToBe(webElement, attribute, text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitAttributeToBeNotEmpty(WebElement webElement, String text) {
+    public void waitAttributeToBeNotEmpty(WebElement webElement, String text) {
         try {
             wait.until(ExpectedConditions.attributeToBeNotEmpty(webElement, text));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitElementSelectionStateToBe(WebElement webElement, boolean selected) {
+    public void waitElementSelectionStateToBe(WebElement webElement, boolean selected) {
         try {
             wait.until(ExpectedConditions.elementSelectionStateToBe(webElement, selected));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitInvisibilityOfElementLocated(String xpath) {
+    public void waitInvisibilityOfElementLocated(String xpath) {
         try {
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitJavaScriptThrowsNoExceptions(String javaScript) {
+    public void waitJavaScriptThrowsNoExceptions(String javaScript) {
         try {
             wait.until(ExpectedConditions.javaScriptThrowsNoExceptions(javaScript));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitJsReturnsValue(String javaScript) {
+    public void waitJsReturnsValue(String javaScript) {
         try {
             wait.until(ExpectedConditions.jsReturnsValue(javaScript));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitNumberOfElementsToBe(String xpath, Integer number) {
+    public void waitNumberOfElementsToBe(String xpath, Integer number) {
         try {
             wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath(xpath), number));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitNumberOfElementsToBeLessThan(String xpath, Integer number) {
+    public void waitNumberOfElementsToBeLessThan(String xpath, Integer number) {
         try {
             wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath(xpath), number));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitNumberOfElementsToBeMoreThan(String xpath, Integer number) {
+    public void waitNumberOfElementsToBeMoreThan(String xpath, Integer number) {
         try {
             wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(xpath), number));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitNumberOfWindowsToBe(Integer number) {
+    public void waitNumberOfWindowsToBe(Integer number) {
         try {
             wait.until(ExpectedConditions.numberOfWindowsToBe(number));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitOr(WebElement webElement) {
+    public void waitOr(WebElement webElement) {
         try {
             wait.until(ExpectedConditions.or((ExpectedCondition<?>) webElement));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitPresenceOfNestedElementLocatedBy(WebElement webElement, String childXpath) {
+    public void waitPresenceOfNestedElementLocatedBy(WebElement webElement, String childXpath) {
         try {
             wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(webElement, By.id(childXpath)));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitRefreshed(WebElement webElement) {
+    public void waitRefreshed(WebElement webElement) {
         try {
             wait.until(ExpectedConditions.refreshed((ExpectedCondition<Object>) webElement));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitStaLenessOf(WebElement webElement) {
+    public void waitStaLenessOf(WebElement webElement) {
         try {
             wait.until(ExpectedConditions.stalenessOf(webElement));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitTextMatches(String xpath, Pattern pattern) {
+    public void waitTextMatches(String xpath, Pattern pattern) {
         try {
             wait.until(ExpectedConditions.textMatches(By.xpath(xpath), pattern));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitUrlContains(String url) {
+    public void waitUrlContains(String url) {
         try {
             wait.until(ExpectedConditions.urlContains(url));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitUrlMatches(String url) {
+    public void waitUrlMatches(String url) {
         try {
             wait.until(ExpectedConditions.urlMatches(url));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 
-    public boolean waitUrlToBe(String url) {
+    public void waitUrlToBe(String url) {
         try {
             wait.until(ExpectedConditions.urlToBe(url));
-            return true;
         } catch (TimeoutException e) {
-            return false;
+            e.printStackTrace();
         }
     }
 }
