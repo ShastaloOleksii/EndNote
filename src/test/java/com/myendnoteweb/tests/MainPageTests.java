@@ -1,7 +1,8 @@
 package com.myendnoteweb.tests;
 
-import com.myendnoteweb.MainPage;
+import com.myendnoteweb.pages.MainPage;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class MainPageTests extends MainPage {
@@ -37,6 +38,19 @@ public class MainPageTests extends MainPage {
     public void loginLocalizationPanelIsPresentOnTheMainPage() {
         signIN();
         Assert.assertTrue(isWebElementDisplayedID("languages1"));
+
+    }
+
+    @Test
+    public void loginLearnAboutEndNoteAttributes() {
+        signIN();
+        Assert.assertTrue(attributes(learnAboutEndNote, "class"));
+    }
+
+    @Test
+    public void sdvafv(){
+        signIN();
+        System.out.println(getAttribute(showGettingStartedGuide,"alt"));
 
     }
 }

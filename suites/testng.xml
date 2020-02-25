@@ -9,7 +9,7 @@
             <package name="com.myendnoteweb"/>
         </packages>
         <classes>
-            <class name="com.myendnoteweb.MainPage"/>
+            <class name="com.myendnoteweb.pages.MainPage"/>
         </classes>
     </test>
 

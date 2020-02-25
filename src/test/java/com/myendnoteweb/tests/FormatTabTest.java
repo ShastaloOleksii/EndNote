@@ -1,10 +1,13 @@
 package com.myendnoteweb.tests;
 
-import com.myendnoteweb.MainPage;
+import com.myendnoteweb.pages.FormatTabPage;
+import com.myendnoteweb.pages.MainPage;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class FormatTabTest extends MainPage {
+public class FormatTabTest extends FormatTabPage {
+
     @Test
     public void loginClickOnTheFormatTabHeadingIsPresent() {
         signIN();

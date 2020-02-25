@@ -1,11 +1,10 @@
 package com.myendnoteweb.tests;
 
-import com.myendnoteweb.MainPage;
+import com.myendnoteweb.pages.PanelPage;
 import org.junit.Test;
 import org.testng.Assert;
 
-public class PanelTests extends MainPage {
-
+public class PanelTests extends PanelPage {
     @Test
     public void panelQuickSearchIsPresent() {
         signIN();

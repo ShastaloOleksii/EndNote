@@ -1,0 +1,34 @@
+    Link used
+    https://access.clarivate.com/login?app=endnote
+             .//div/span[last()]//label[contains(@id, 'mat-form-field-label-3')]
+             .//div[not(@a)]//div[contains(text(),'')]//span[contains(text(),'Sign in to continue with EndNote')]
+             .//script[not(@var) and not(@type) and(@async)]
+
+}
+
+     Link used
+     https://www.myendnoteweb.com/EndNoteWeb.html
+               .//td/nav[@id = 'enwHeader']//ancestor::h1
+               .//a[starts-with(text(), 'Show') or starts-with(@title, 'Show')]
+               .//div[starts-with(text(),'G')]
+               .//a/img[contains(@id,'proSmallImg')]
+               .//span[@class= 'dropdown']//ancestor::li[contains(@class,'dropdown-header')]
+               .//*[div]/parent::div[contains(@id,'gsg_container')]
+               .//*[input]/parent::div[contains(@id,'hidepanel_img')]
+               .//tr[contains(@id,'display')]/preceding::div[contains(@id,'idGuideLink')]
+               .//tr[contains(@id,'display')]/preceding::div[contains(@class, 'ne-main-nav-wrapper')]
+               .//input[contains(@id,'refID')]/preceding-sibling::input[contains(@name,'max_page_count')]
+               .//input[contains(@id,'idRestoreval')]/preceding-sibling::div[contains(@class,'sortBy')]
+               .//table[contains(@id, 'summaryOuterTable')]/descendant::div[contains(@class,'ne-main-nav-wrapper')]
+               .//table[contains(@id, 'summaryOuterTable')]/descendant::td[contains(text(),'2003')]
+               .//div[contains(@id,'')]/following-sibling::ul
+               .//div[contains(@id,'')]/following-sibling::form[contains(@name,'leftnavform')]
+               .//ul[contains(@class,'')]/following-sibling::div[contains(@class,'seperator')]
+               .//div[count(div)=2]//a[contains(@title, 'View references in the Trash')]
+               .//div[count(ul)]/descendant::li[contains(@id,'tab4')]
+               .//div[count(div)=2]/descendant::div[contains(text(), 'Getting Started')]
+               .//div[contains(@id,'')]/following-sibling::ul |.//div[contains(@id,'')]/following-sibling::form[contains(@name, 'hideshowpanel')]
+               .//td[count(div) >= 2 ] | .//tr[count(div<=3)]
+               .//div[count(ul) >= 1 ] | .//div[count(ul<=2)]
+               .//div[count(ul) >= 5 mod 2 ] | .//div[count(ul<=5 mod 3)]
+               .//ul[count(li)>= 5 mod 2] | ul[count(li) <= 5 mod 3]
