@@ -10,7 +10,6 @@ public class CollectTabPage extends BasePage {
         super(driver);
     }
 
-
     @FindBy(xpath = ".//select[contains(@id, 'idRemoteSearchConnection')]")
     private WebElement selectSearchConnection;
 
@@ -25,14 +24,4 @@ public class CollectTabPage extends BasePage {
         return britishLibrary;
     }
 
-
-
-    /*public void signIN() {
-        getLoginField().sendKeys(login);
-        System.out.println("Login");
-        getPasswordField().sendKeys(password);
-        System.out.println("Password");
-        getButtonLogIn().click();
-        System.out.println("Press button");
-    }*/
 }

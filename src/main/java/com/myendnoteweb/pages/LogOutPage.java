@@ -19,6 +19,4 @@ public class LogOutPage extends BasePage {
     }
 
 
-
-
 }

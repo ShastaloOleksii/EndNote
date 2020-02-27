@@ -1,39 +1,37 @@
 package com.myendnoteweb.tests.nottrivial;
 
-import com.myendnoteweb.base.BasePage;
 import com.myendnoteweb.tests.base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 
 public class NotTrivialTests extends BaseTest {
 
 
-/*    @Test
+    @Test
     public void allMyReferencesTitleIsPresentAfterClick() {
-        signIN();
+        preconditions();
         if (isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]")) {
             System.out.println("Show Getting Started Guide");
         } else {
             System.out.println("Hide Getting Started Guide");
-            click(hideGettingStartedGuide);
+            getMainSteps().clickOnTheButton(getMainPage().getHideGettingStartedGuide());
         }
         Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(text(), 'All My References')]"));
     }
 
-    @Test
+    @Test //Here is bug
     public void loginClickOnTheFormatTabClickOnTheLogoMainPageOpened() {
-        signIN();
-        click(formatTab);
-        click(logo);
+        preconditions();
+        getMainSteps().clickOnTheButton(getMainPage().getFormatTab());
+        getMainSteps().clickOnTheButton(getMainPage().getLogo());
         Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
     }
+
     @Test
     public void loginClickOnTheFormatTabClickOnTheMyReferencesMainPageOpened() {
-        signIN();
-        click(formatTab);
-
-        click(myReferencesTab);
+        preconditions();
+        getMainSteps().clickOnTheButton(getMainPage().getFormatTab());
+        getFormatTabSteps().clickOnTheButton(getFormatTabPage().getMyReferences());
         Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
-    }*/
+    }
 }

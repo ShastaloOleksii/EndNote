@@ -4,10 +4,8 @@ import com.myendnoteweb.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
-    private WebDriver driver;
 
     @FindBy(xpath = ".//label[contains(@class,'mat-form-field-label ng-tns-c16-0 ng-star-inserted mat-empty mat-form-field-empty')]")
     private WebElement emptyLoginField;

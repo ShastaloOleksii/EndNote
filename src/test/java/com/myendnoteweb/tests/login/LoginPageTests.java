@@ -1,8 +1,5 @@
 package com.myendnoteweb.tests.login;
 
-import com.myendnoteweb.pages.LogOutPage;
-import com.myendnoteweb.pages.LoginPage;
-import com.myendnoteweb.pages.MainPage;
 import com.myendnoteweb.tests.base.BaseTest;
 import org.junit.*;
 import org.openqa.selenium.By;
@@ -12,10 +9,9 @@ public class LoginPageTests extends BaseTest {
 
     @Test
     public void signIn() {
-        LoginPage loginPage = new LoginPage(driver);
-        getLoginSteps().insertLoginInLoginField(loginPage.getLoginField(), getLogin());
-        getLoginSteps().insertPasswordField(loginPage.getPasswordField(), getPassword());
-        getLoginSteps().clickOnTheButton(loginPage.getButtonLogIn());
+        getLoginSteps().insertLoginInLoginField(getLoginPage().getLoginField(), getLogin());
+        getLoginSteps().insertPasswordField(getLoginPage().getPasswordField(), getPassword());
+        getLoginSteps().clickOnTheButton(getLoginPage().getButtonLogIn());
         Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
     }
 
@@ -23,20 +19,17 @@ public class LoginPageTests extends BaseTest {
     public void signOut() {
         preconditions();
         Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
-        MainPage mainPage = new MainPage(driver);
-        getMainSteps().clickOnTheButton(mainPage.getPersonProSmallImg());
+        getMainSteps().clickOnTheButton(getMainPage().getPersonProSmallImg());
         Assert.assertTrue(driver.findElement(By.xpath(".//a[contains(@target,'self')]")).isDisplayed());
-        LogOutPage logOutPage = new LogOutPage(driver);
         System.out.println("Before logOut");
-        getLogOutSteps().clickOnTheButton(logOutPage.getLogOutRef());
+        getLogOutSteps().clickOnTheButton(getLogOutPage().getLogOutRef());
         System.out.println("After logOut");
         Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
 
     }
     @Test
     public void clickToRegistrationButtonOnLoginPage() {
-        LoginPage loginPage = new LoginPage(driver);
-        getLoginSteps().clickOnTheButton(loginPage.getRegistrationButton());
+        getLoginSteps().clickOnTheButton(getLoginPage().getRegistrationButton());
        /* Wait<WebDriver> wait = new WebDriverWait(driver, 5, 10);
         wait.until(CustomWaiter.visibilityOfElement(registrationButton));
         click(registrationButton);*/
