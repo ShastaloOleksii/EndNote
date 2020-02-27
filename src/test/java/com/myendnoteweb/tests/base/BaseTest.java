@@ -1,6 +1,11 @@
-package com.myendnoteweb.base;
+package com.myendnoteweb.tests.base;
 
+import com.myendnoteweb.base.BasePage;
 import com.myendnoteweb.pages.CollectTabPage;
+import com.myendnoteweb.pages.LoginPage;
+import com.myendnoteweb.pages.OptionTabPage;
+import com.myendnoteweb.steps.*;
+import com.myendnoteweb.tests.collecttab.CollectTabTests;
 import com.myendnoteweb.utils.CustomWaiter;
 import com.myendnoteweb.utils.InitDrivers;
 import org.junit.After;
@@ -12,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,30 +31,90 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public abstract class BaseTest extends InitDrivers {
-    private static final int WAIT_TIME = 10;
-    protected String host;
-    protected FileInputStream fis;
-    protected Properties property = new Properties();
-    public String login;
-    public String password;
-    protected String chromeDriver;
-    public CollectTabPage collectTabPage = new CollectTabPage();
-    @FindBy(xpath = ".//input[@id = 'mat-input-0']")
-    private WebElement loginField;
+    public WebDriver driver;
+    private String host;
+    private FileInputStream fis;
+    private Properties property = new Properties();
+    private String login;
+    private String password;
+    private String chromeDriver;
+    private CollectTabSteps collectTabSteps = new CollectTabSteps();
+    private MainSteps mainSteps = new MainSteps();
+    private LoginSteps loginSteps = new LoginSteps();
+    private FormatTabSteps formatTabSteps = new FormatTabSteps();
+    private DownloadTabSteps downloadTabSteps = new DownloadTabSteps();
+    private LogOutSteps logOutSteps = new LogOutSteps();
+    private MatchTabSteps matchTabSteps = new MatchTabSteps();
+    private OptionTabSteps optionTabSteps = new OptionTabSteps();
+    private OrganizeTabSteps organizeTabSteps = new OrganizeTabSteps();
+    private PanelSteps panelSteps = new PanelSteps();
+    public static final int WAIT_TIME = 15;
 
-    @FindBy(id = "mat-input-1")
-    private WebElement passwordField;
 
-    @FindBy(xpath = "//button[contains(@class,'btn--login')]")
-    private WebElement buttonLogIn;
+    public LogOutSteps getLogOutSteps() {
+        return logOutSteps;
+    }
 
-    @FindBy(id = "lgLink4")
-    public WebElement formatTab;
+    public DownloadTabSteps getDownloadTabSteps() {
+        return downloadTabSteps;
+    }
 
-    @FindBy(id = "lgLink1")
-    public WebElement myReferencesTab;
-    @FindBy(xpath = ".//a[contains(text(), 'Show Getting Started Guide')]")
-    public WebElement showGettingStartedGuide;
+    public FormatTabSteps getFormatTabSteps() {
+        return formatTabSteps;
+    }
+
+    public MatchTabSteps getMatchTabSteps() {
+        return matchTabSteps;
+    }
+
+
+    public OptionTabSteps getOptionTabSteps() {
+        return optionTabSteps;
+    }
+
+    public OrganizeTabSteps getOrganizeTabSteps() {
+        return organizeTabSteps;
+    }
+
+    public PanelSteps getPanelSteps() {
+        return panelSteps;
+    }
+
+    public String getChromeDriver() {
+        return chromeDriver;
+    }
+
+    public CollectTabSteps getCollectTabSteps() {
+        return collectTabSteps;
+    }
+
+    public MainSteps getMainSteps() {
+        return mainSteps;
+    }
+
+    public LoginSteps getLoginSteps() {
+        return loginSteps;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public FileInputStream getFis() {
+        return fis;
+    }
+
+    public Properties getProperty() {
+        return property;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     @Before
     public void setUp() {
@@ -75,12 +141,20 @@ public abstract class BaseTest extends InitDrivers {
         driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
         driver.get(host);
         driver.manage().window().maximize();
-        PageFactory.initElements(driver, this);
     }
-
+/*
     public void signIN() {
-        Wait<WebDriver> wait = new WebDriverWait(driver, 5, 10);
-        wait.until(CustomWaiter.visibilityOfElement(loginField));
+        loginPage.getLoginField().sendKeys(login);
+        System.out.println("Login");
+        loginPage.getPasswordField().sendKeys(password);
+        System.out.println("Password");
+        // wait.until(CustomWaiter.visibilityOfElement(buttonLogIn));
+        loginPage.getButtonLogIn().click();
+        System.out.println("Press button");
+    }*/
+
+
+   /* public void signIN() {
         loginField.sendKeys(login);
         System.out.println("Login");
         passwordField.sendKeys(password);
@@ -88,7 +162,7 @@ public abstract class BaseTest extends InitDrivers {
        // wait.until(CustomWaiter.visibilityOfElement(buttonLogIn));
         buttonLogIn.click();
         System.out.println("Press button");
-    }
+    }*/
 
     @After
     public void close() {
@@ -96,9 +170,16 @@ public abstract class BaseTest extends InitDrivers {
     }
 
     public void click(WebElement web) {
-        Wait<WebDriver> wait = new WebDriverWait(driver, 5, 10);
-        wait.until(CustomWaiter.visibilityOfElement(web));
+        // Wait<WebDriver> wait = new WebDriverWait(driver, 5, 10);
+        //wait.until(ExpectedConditions.elementToBeClickable(web));
         web.click();
+    }
+
+    public void preconditions() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.getLoginField().sendKeys(login);
+        loginPage.getPasswordField().sendKeys(password);
+        loginPage.getSignInButton().click();
     }
 
     public boolean attributes(WebElement web, String attribute) {
@@ -120,7 +201,7 @@ public abstract class BaseTest extends InitDrivers {
             return false;
         }
     }
-
+/*
     public String getText(WebElement webElement) {
         return webElement.getText();
     }
@@ -131,7 +212,7 @@ public abstract class BaseTest extends InitDrivers {
 
     public boolean isPanelHidden(WebElement webElement, String attribute, String text) {
         return webElement.getAttribute(attribute).contains(text);
-    }
+    }*/
 
     public boolean isWebElementDisplayedID(String id) {
         try {
@@ -157,5 +238,30 @@ public abstract class BaseTest extends InitDrivers {
         });
 
     }
+
+
+    public String getText(WebElement webElement) {
+        return webElement.getText();
+    }
+
+    public String getAttribute(WebElement webElement, String attribute) {
+        return webElement.getAttribute(attribute);
+    }
+
+    public boolean isPanelHidden(WebElement webElement, String attribute, String text) {
+        return webElement.getAttribute(attribute).contains(text);
+    }
+
+
+    public boolean waitForVisible(WebElement web) {
+        try {
+            //wait.until(ExpectedConditions.visibilityOf(web));
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+
+    }
+
 
 }

@@ -1,56 +1,58 @@
-package com.myendnoteweb.tests;
+package com.myendnoteweb.tests.main;
 
 import com.myendnoteweb.pages.MainPage;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import com.myendnoteweb.tests.base.BaseTest;
+import org.junit.*;
 
-public class MainPageTests extends MainPage {
+public class MainPageTests extends BaseTest {
 
     @Test
     public void loginMainPageIsOpened() {
-        signIN();
+        preconditions();
         Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
 
     }
 
     @Test
     public void loginClickOnTheMyReferencesTabHeadingIsPresent() {
-        signIN();
-        click(myReferencesTab);
-        Assert.assertTrue(isWebElementDisplayedXpath("//a[contains(text(), 'Show Getting')]"));
+        preconditions();
+        MainPage mainPage = new MainPage(driver);
+        getMainSteps().clickOnTheButton(mainPage.getMyReferencesTab());
+        Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@id, 'idFoderDesc')]"));
     }
 
     @Test
     public void loginMainTabsMenuIsPresentOnTheMainPage() {
-        signIN();
+        preconditions();
         Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'navbar-default')]"));
     }
 
     @Test
     public void loginLogoPresentOnTheMainPage() {
-        signIN();
+        preconditions();
         Assert.assertTrue(isWebElementDisplayedXpath("//img[contains(@alt,'Clarivate Analytics')]"));
 
     }
 
     @Test
     public void loginLocalizationPanelIsPresentOnTheMainPage() {
-        signIN();
+        preconditions();
         Assert.assertTrue(isWebElementDisplayedID("languages1"));
 
     }
 
     @Test
     public void loginLearnAboutEndNoteAttributes() {
-        signIN();
-        Assert.assertTrue(attributes(learnAboutEndNote, "class"));
+        preconditions();
+        MainPage mainPage = new MainPage(driver);
+        Assert.assertTrue(attributes(mainPage.getLearnAboutEndNote(), "class"));
     }
 
     @Test
-    public void sdvafv(){
-        signIN();
-        System.out.println(getAttribute(showGettingStartedGuide,"alt"));
+    public void loginShowGettingStartedGuide(){
+        preconditions();
+        MainPage mainPage = new MainPage(driver);
+        Assert.assertTrue(attributes(mainPage.getFormatTab(),"alt"));
 
     }
 }

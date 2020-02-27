@@ -23,15 +23,35 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
-public abstract class BasePage extends InitDrivers {
-    private static final int WAIT_TIME = 5;
+public class BasePage{
+
+    private WebDriver driver;
+   /* private static final int WAIT_TIME = 10;
     protected Wait<WebDriver> wait;
     protected FileInputStream fis;
     protected Properties property = new Properties();
     protected String login;
     protected String password;
     protected String chromeDriver;
-    protected String host;
+    protected String host;*/
+
+    @FindBy(xpath = ".//img[contains(@alt,'Clarivate Analytics')]")
+    private WebElement logo;
+
+    public BasePage(WebDriver driver) {
+        this.driver= driver;
+        PageFactory.initElements(driver, this);
+    }
+    /*public BasePage(WebElement logo) {
+        this.logo = logo;
+    }*/
+
+
+
+
+
+
+ /*
 
     @FindBy(xpath = ".//input[@id = 'mat-input-0']")
     private WebElement loginField;
@@ -42,12 +62,10 @@ public abstract class BasePage extends InitDrivers {
     @FindBy(xpath = "//button[contains(@class,'btn--login')]")
     private WebElement buttonLogIn;
 
-    @FindBy(id = "lgLink4")
-    public WebElement formatTab;
+
 
     @FindBy(id = "lgLink1")
     public WebElement myReferencesTab;
-
 
     public Properties getProperty() {
         return property;
@@ -134,7 +152,7 @@ public abstract class BasePage extends InitDrivers {
         System.out.println("Password");
         buttonLogIn.click();
         System.out.println("Press button");
-    }
+    }*/
 
     public void click(WebElement web) {
         web.click();
@@ -150,52 +168,11 @@ public abstract class BasePage extends InitDrivers {
 
     }
 
-    public boolean isWebElementDisplayedXpath(String xpath) {
-        try {
-            System.out.println("All ok, relax");
-            return driver.findElement(By.xpath(xpath)).isDisplayed();
-        } catch (NoSuchElementException e) {
-            System.out.println("The test is fail, web element is absent on the page");
-            return false;
-        }
+
+    @Override
+    public String toString() {
+        return "BasePage{" +
+                "logo=" + logo +
+                '}';
     }
-
-    public String getText(WebElement webElement) {
-        return webElement.getText();
-    }
-
-    public String getAttribute(WebElement webElement, String attribute) {
-        return webElement.getAttribute(attribute);
-    }
-
-    public boolean isPanelHidden(WebElement webElement, String attribute, String text) {
-        return webElement.getAttribute(attribute).contains(text);
-    }
-
-    public boolean isWebElementDisplayedID(String id) {
-        try {
-            driver.findElement(By.id(id));
-            System.out.println("All ok, relax");
-            return true;
-        } catch (NoSuchElementException e) {
-            System.out.println("The test is fail, web element is absent on the page");
-            return false;
-        }
-    }
-
-    public String fluentWait(WebElement webElement, int waitTime, int milisek) {
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(waitTime))
-                .pollingEvery(Duration.ofMillis(milisek))
-                .ignoring(NoSuchElementException.class);
-        return wait.until(new Function<WebDriver, String>() {
-            public String apply(WebDriver driver) {
-                return webElement.getText();
-            }
-
-        });
-
-    }
-    
-    
 }
