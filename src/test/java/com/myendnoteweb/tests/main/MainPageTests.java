@@ -1,6 +1,5 @@
 package com.myendnoteweb.tests.main;
 
-import com.myendnoteweb.pages.MainPage;
 import com.myendnoteweb.tests.base.BaseTest;
 import org.junit.*;
 
@@ -9,15 +8,14 @@ public class MainPageTests extends BaseTest {
     @Test
     public void loginMainPageIsOpened() {
         preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')] | .//a[contains(text(), 'Hide Getting Started Guide')]"));
 
     }
 
     @Test
     public void loginClickOnTheMyReferencesTabHeadingIsPresent() {
         preconditions();
-        MainPage mainPage = new MainPage(driver);
-        getMainSteps().clickOnTheButton(mainPage.getMyReferencesTab());
+        getMainSteps().clickOnTheButton(getMainPage().getMyReferencesTab());
         Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@id, 'idFoderDesc')]"));
     }
 
@@ -44,15 +42,13 @@ public class MainPageTests extends BaseTest {
     @Test
     public void loginLearnAboutEndNoteAttributes() {
         preconditions();
-        MainPage mainPage = new MainPage(driver);
-        Assert.assertTrue(attributes(mainPage.getLearnAboutEndNote(), "class"));
+        Assert.assertTrue(attributes(getMainPage().getLearnAboutEndNote(), "class"));
     }
 
     @Test
-    public void loginShowGettingStartedGuide(){
+    public void loginShowGettingStartedGuide() {
         preconditions();
-        MainPage mainPage = new MainPage(driver);
-        Assert.assertTrue(attributes(mainPage.getFormatTab(),"alt"));
+        Assert.assertTrue(attributes(getMainPage().getFormatTab(), "alt"));
 
     }
 }

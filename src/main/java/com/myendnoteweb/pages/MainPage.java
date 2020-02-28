@@ -1,12 +1,9 @@
 package com.myendnoteweb.pages;
 
 import com.myendnoteweb.base.BasePage;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 
 public class MainPage extends BasePage {
 
@@ -120,47 +117,6 @@ public class MainPage extends BasePage {
     public WebElement getLearnAboutEndNote() {
         return learnAboutEndNote;
     }
-
-
-    @Override
-    public String toString() {
-        return "MainPage{" +
-                "organize=" + organize +
-                ", options=" + options +
-                ", hideGettingStartedGuide=" + hideGettingStartedGuide +
-                ", matchTab=" + matchTab +
-                ", personProSmallImg=" + personProSmallImg +
-                ", collectTab=" + collectTab +
-                ", formatTab=" + formatTab +
-                ", downloadsTab=" + downloadsTab +
-                ", showGettingStartedGuide=" + showGettingStartedGuide +
-                ", collectTabHeading=" + collectTabHeading +
-                ", formatTabHeading=" + formatTabHeading +
-                ", matchTabHeading=" + matchTabHeading +
-                ", learnAboutEndNote=" + learnAboutEndNote +
-                '}';
-    }
-
-   /* public MainPage(WebElement logo) {
-        super(logo);
-    }*/
-
-  /*  public MainPage(WebElement logo, WebElement organize, WebElement options, WebElement hideGettingStartedGuide, WebElement matchTab, WebElement personProSmallImg, WebElement collectTab, WebElement formatTab, WebElement downloadsTab, WebElement showGettingStartedGuide, WebElement collectTabHeading, WebElement formatTabHeading, WebElement matchTabHeading, WebElement learnAboutEndNote) {
-        super(logo);
-        this.organize = organize;
-        this.options = options;
-        this.hideGettingStartedGuide = hideGettingStartedGuide;
-        this.matchTab = matchTab;
-        this.personProSmallImg = personProSmallImg;
-        this.collectTab = collectTab;
-        this.formatTab = formatTab;
-        this.downloadsTab = downloadsTab;
-        this.showGettingStartedGuide = showGettingStartedGuide;
-        this.collectTabHeading = collectTabHeading;
-        this.formatTabHeading = formatTabHeading;
-        this.matchTabHeading = matchTabHeading;
-        this.learnAboutEndNote = learnAboutEndNote;
-    }*/
 
 
 }
