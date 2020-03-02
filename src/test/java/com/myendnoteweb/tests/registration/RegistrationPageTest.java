@@ -7,7 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
 import java.util.ArrayList;
-
+//This class was changed
 public class RegistrationPageTest extends BaseTest {
     private String email;
 

@@ -17,7 +17,7 @@ public class PagesProvider {
     private PanelPage panelPage;
     private RegistrationPage registrationPage;
     private MailPage mailPage;
-
+//This class was created
     public PagesProvider(WebDriver driver) {
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         mainPage = PageFactory.initElements(driver, MainPage.class);
