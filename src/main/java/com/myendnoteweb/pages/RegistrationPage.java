@@ -1,7 +1,6 @@
 package com.myendnoteweb.pages;
 
 import com.myendnoteweb.base.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -46,8 +45,60 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = ".//button[contains(@type,'submit') and not(@title)]")
     private WebElement signInButtonOnLoginPage;
 
-    public RegistrationPage(WebDriver driver) {
-        super(driver);
+    @FindBy(xpath = ".//input[contains(@value,'I Agree')]")
+    private WebElement buttonIAgree;
+
+    @FindBy(xpath = ".//div[contains(@class,'navbar navbar-default')]")
+    private WebElement navbarDefault;
+
+    @FindBy(xpath = ".//input[contains(@value, 'Проверить почту')]")
+    private WebElement checkMailBoxButton;
+
+    @FindBy(xpath = ".//a[contains(@id,'lrefr')]")
+    private WebElement refreshButtonInMailBox;
+
+    @FindBy(xpath = ".//span[contains(text(),'EndNote')]")
+    private WebElement mailFromEndNote;
+
+    @FindBy(xpath = ".//a[contains(text(),'Click here to activate')]")
+    private WebElement linkForActivateEndNote;
+
+    @FindBy(xpath = ".//input[contains(value, '') and (@name)]")
+    private WebElement fieldWithMailAddressInMailBox;
+
+    @FindBy(xpath = ".//button")
+    private WebElement buttonOfTheApprove;
+
+    public WebElement getButtonOfTheApprove() {
+        return buttonOfTheApprove;
+    }
+
+    public WebElement getFieldWithMailAddressInMailBox() {
+        return fieldWithMailAddressInMailBox;
+    }
+
+    public WebElement getCheckMailBoxButton() {
+        return checkMailBoxButton;
+    }
+
+    public WebElement getRefreshButtonInMailBox() {
+        return refreshButtonInMailBox;
+    }
+
+    public WebElement getMailFromEndNote() {
+        return mailFromEndNote;
+    }
+
+    public WebElement getLinkForActivateEndNote() {
+        return linkForActivateEndNote;
+    }
+
+    public WebElement getButtonIAgree() {
+        return buttonIAgree;
+    }
+
+    public WebElement getNavbarDefault() {
+        return navbarDefault;
     }
 
 
@@ -99,7 +150,6 @@ public class RegistrationPage extends BasePage {
     public WebElement getIframeInBox() {
         return iframeInBox;
     }
-
 
     public WebElement getReEnterPassword() {
         return reEnterPassword;

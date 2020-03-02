@@ -1,13 +1,11 @@
 package com.myendnoteweb.tests.nottrivial;
 
 import com.myendnoteweb.tests.base.BaseTest;
-import org.junit.Assert;
-import org.junit.Test;
 
 public class NotTrivialTests extends BaseTest {
 
 
-    @Test
+  /*  @Test
     public void allMyReferencesTitleIsPresentAfterClick() {
         preconditions();
         if (isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]")) {
@@ -33,5 +31,5 @@ public class NotTrivialTests extends BaseTest {
         getMainSteps().clickOnTheButton(getMainPage().getFormatTab());
         getFormatTabSteps().clickOnTheButton(getFormatTabPage().getMyReferences());
         Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')]"));
-    }
+    }*/
 }

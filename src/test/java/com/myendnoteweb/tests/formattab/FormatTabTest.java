@@ -8,11 +8,11 @@ public class FormatTabTest extends BaseTest {
 
     @Test
     public void loginClickOnTheFormatTabHeadingIsPresent() {
-        preconditions();
-        getFormatTabSteps().clickOnTheButton(getMainPage().getFormatTab());
-        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
-        getFormatTabSteps().clickOnTheButton(getFormatTabPage().getSelectFavaorites());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//table[contains(@class, 'connectFiles')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getMainSteps().goToFormatPage();
+        Assert.assertTrue(getFormatTabSteps().isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
+        getFormatTabSteps().openFavoriteList();
+        Assert.assertTrue(getFormatTabSteps().isWebElementDisplayedXpath(".//table[contains(@class, 'connectFiles')]"));
 
     }
 }

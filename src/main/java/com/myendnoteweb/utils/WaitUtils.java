@@ -1,7 +1,9 @@
 package com.myendnoteweb.utils;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,9 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.regex.Pattern;
 
 public class WaitUtils {
-    WebDriver driver = new ChromeDriver();
-    int timeout = 30;
-    WebDriverWait wait = new WebDriverWait(driver, timeout);
+    private  WebDriverWait wait;
+
+    public WaitUtils(WebDriver driver, int timeoutSeconds) {
+        wait = new WebDriverWait(driver, timeoutSeconds);
+    }
 
     public void waitElementToBeClickable(WebElement web) {
         try {

@@ -1,10 +1,12 @@
 package com.myendnoteweb.steps;
 
-import com.myendnoteweb.steps.base.BaseStep;
-import org.openqa.selenium.WebDriver;
+import com.myendnoteweb.pages.LogOutPage;
 
-public class NotTrivialSteps extends BaseStep {
-    public NotTrivialSteps(WebDriver driver) {
+public class NotTrivialSteps  {
+    LogOutPage logOutPage;
+
+    /*public LogOutSteps(WebDriver driver) {
         super(driver);
-    }
+        logOutPage = PageFactory.initElements(driver, LogOutPage.class);
+    }*/
 }

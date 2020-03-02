@@ -5,50 +5,51 @@ import org.junit.*;
 
 public class MainPageTests extends BaseTest {
 
+
     @Test
     public void loginMainPageIsOpened() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')] | .//a[contains(text(), 'Hide Getting Started Guide')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')] | .//a[contains(text(), 'Hide Getting Started Guide')]"));
 
     }
 
     @Test
     public void loginClickOnTheMyReferencesTabHeadingIsPresent() {
-        preconditions();
-        getMainSteps().clickOnTheButton(getMainPage().getMyReferencesTab());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@id, 'idFoderDesc')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getMainSteps().goToMyReferencesPage();
+        Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath(".//td[contains(@id, 'idFoderDesc')]"));
     }
 
     @Test
     public void loginMainTabsMenuIsPresentOnTheMainPage() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'navbar-default')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath("//div[contains(@class,'navbar-default')]"));
     }
 
     @Test
     public void loginLogoPresentOnTheMainPage() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath("//img[contains(@alt,'Clarivate Analytics')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath("//img[contains(@alt,'Clarivate Analytics')]"));
 
     }
 
     @Test
     public void loginLocalizationPanelIsPresentOnTheMainPage() {
-        preconditions();
+        getLoginSteps().signIn(getLogin(),getPassword());
         Assert.assertTrue(isWebElementDisplayedID("languages1"));
 
     }
 
     @Test
     public void loginLearnAboutEndNoteAttributes() {
-        preconditions();
-        Assert.assertTrue(attributes(getMainPage().getLearnAboutEndNote(), "class"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getMainSteps().learnAboutEndNoteEqualsAtribute(getClassAtribute());
     }
 
     @Test
     public void loginShowGettingStartedGuide() {
-        preconditions();
-        Assert.assertTrue(attributes(getMainPage().getFormatTab(), "alt"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getMainSteps().showGettingStartedGuideAtribute(getAltAtribute());
 
     }
 }

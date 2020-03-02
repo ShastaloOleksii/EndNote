@@ -2,28 +2,30 @@ package com.myendnoteweb.tests.panel;
 
 import com.myendnoteweb.tests.base.BaseTest;
 import org.junit.Test;
-import org.testng.Assert;
+
+import java.util.logging.Logger;
+
 
 public class PanelTests extends BaseTest {
+    private  final  static Logger LOG = Logger.getLogger(PanelTests.class.getName());
 
     @Test
     public void panelQuickSearchIsPresent() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'sideHead')]"));
+        LOG.info("enter userCanLogin test");
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getPanelSteps().panelPresentAssert();
     }
 
     @Test
     public void panelQuickSearchIsHide() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath(".//form[contains(@name, 'citationSearchForm')]"));
-
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getPanelSteps().panelIsHideAssert();
     }
 
     @Test
-    public void linUnFiledIsPresent() {
-        preconditions();
-        getPanelSteps().clickOnTheButton(getPanelPage().getUnfiled());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@class,'heading')] "));
-
+    public void linkUnFiledIsPresent() {
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getPanelSteps().openedUnfieldTab();
+        getPanelSteps().unfieldTabHeadingAssert();
     }
 }
