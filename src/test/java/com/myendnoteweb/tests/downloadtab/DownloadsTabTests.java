@@ -8,12 +8,12 @@ public class DownloadsTabTests extends BaseTest {
 
     @Test
     public void loginClickOnTheDownloadsTabHeadingIsPresent() {
-        preconditions();
-        getDownloadTabSteps().clickOnTheButton(getMainPage().getDownloadsTab());
-        Assert.assertTrue(isWebElementDisplayedXpath("//table[contains(@class,'contnav_lower')]"));
-        getDownloadTabSteps().clickOnTheButton(getDownloadsTabPage().getEndNoteCapture());
-        driver.switchTo().frame(getDownloadsTabPage().getiFrame());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'captureHeading')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        getMainSteps().goToDownloadsPage();
+        Assert.assertTrue(getDownloadTabSteps().isWebElementDisplayedXpath("//table[contains(@class,'contnav_lower')]"));
+       // getDownloadTabSteps().downloadsTabPage
+        getDownloadTabSteps().switchToIFrame();
+        Assert.assertTrue(getDownloadTabSteps().isWebElementDisplayedXpath(".//div[contains(@class,'captureHeading')]"));
 
     }
 }

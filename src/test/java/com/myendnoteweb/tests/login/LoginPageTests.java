@@ -9,27 +9,25 @@ public class LoginPageTests extends BaseTest {
 
     @Test
     public void signIn() {
-        getLoginSteps().insertLoginInLoginField(getLoginPage().getLoginField(), getLogin());
-        getLoginSteps().insertPasswordField(getLoginPage().getPasswordField(), getPassword());
-        getLoginSteps().clickOnTheButton(getLoginPage().getButtonLogIn());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
+        getLoginSteps().signIn(getLogin(),getPassword());
+        Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
     }
 
     @Test
     public void signOut() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
-        getMainSteps().clickOnTheButton(getMainPage().getPersonProSmallImg());
-        Assert.assertTrue(driver.findElement(By.xpath(".//a[contains(@target,'self')]")).isDisplayed());
+        getLoginSteps().signIn(getLogin(),getPassword());
+        Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
+        getMainSteps().goToLogOutPanel();
+        Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//a[contains(@target,'self')]"));
         System.out.println("Before logOut");
-        getLogOutSteps().clickOnTheButton(getLogOutPage().getLogOutRef());
+        getMainSteps().goToLoginPage();
         System.out.println("After logOut");
         Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
 
     }
     @Test
     public void clickToRegistrationButtonOnLoginPage() {
-        getLoginSteps().clickOnTheButton(getLoginPage().getRegistrationButton());
+        getLoginSteps().goToRegistrationPage();
        /* Wait<WebDriver> wait = new WebDriverWait(driver, 5, 10);
         wait.until(CustomWaiter.visibilityOfElement(registrationButton));
         click(registrationButton);*/

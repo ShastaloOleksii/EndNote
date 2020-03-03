@@ -1,7 +1,6 @@
 package com.myendnoteweb.pages;
 
 import com.myendnoteweb.base.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -29,6 +28,9 @@ public class MainPage extends BasePage {
     @FindBy(id = "lgLink2")
     private WebElement collectTab;
 
+    @FindBy(xpath = ".//a[contains(@target,'self')]")
+    private WebElement logOutRef;
+
     @FindBy(id = "lgLink4")
     private WebElement formatTab;
 
@@ -52,10 +54,6 @@ public class MainPage extends BasePage {
 
     @FindBy(xpath = ".//td[contains(@id, 'idFoderDesc')]")
     private WebElement allMyReferencesTitle;
-
-    public MainPage(WebDriver driver) {
-        super(driver);
-    }
 
 
     public WebElement getMyReferencesTab() {
@@ -118,5 +116,8 @@ public class MainPage extends BasePage {
         return learnAboutEndNote;
     }
 
+    public WebElement getLogOutRef() {
+        return logOutRef;
+    }
 
 }

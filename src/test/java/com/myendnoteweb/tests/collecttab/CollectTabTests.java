@@ -7,15 +7,14 @@ import org.junit.Test;
 public class CollectTabTests extends BaseTest {
 
 
-// To do
+    // To do
     @Test
     public void loginClickOnTheCollectTabHeadingIsPresent() {
-        preconditions();
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
-        getCollectTabSteps().clickOnTheButton(getMainPage().getCollectTab());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
-        getCollectTabSteps().clickOnTheButton(getCollectTabPage().getSelectSearchConnection());
+        getLoginSteps().signIn(getLogin(),getPassword());
+        Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
+        getMainSteps().goToCollectPage();
+        Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
         //Need for finish the dropdown list
-
+        getCollectTabSteps().clickOnSelectSearchConnection();
     }
 }

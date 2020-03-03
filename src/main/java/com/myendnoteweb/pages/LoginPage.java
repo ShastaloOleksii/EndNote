@@ -1,7 +1,6 @@
 package com.myendnoteweb.pages;
 
 import com.myendnoteweb.base.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,10 +23,6 @@ public class LoginPage extends BasePage {
 
     @FindBy(xpath = ".//span[contains(text(),'Sign in') and not(@class)]")
     private WebElement SignInButton;
-
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
 
     public WebElement getLoginField() {
         return this.loginField;
