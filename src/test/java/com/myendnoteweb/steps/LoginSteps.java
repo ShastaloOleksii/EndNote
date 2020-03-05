@@ -3,37 +3,40 @@ package com.myendnoteweb.steps;
 import com.myendnoteweb.pages.LoginPage;
 import com.myendnoteweb.steps.base.BaseStep;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginSteps extends BaseStep {
     LoginPage loginPage;
 
     public LoginSteps(WebDriver driver) {
         super(driver);
-
         loginPage = pagesProvider.getLoginPage();
-        //loginPage = PageFactory.initElements(driver, LoginPage.class);
     }
 
-    public void signIn(String login, String password) {
+    public void signIn(String host, String login, String password) {
+        driver.get(host);
         loginPage.getLoginField().sendKeys(login);
         loginPage.getPasswordField().sendKeys(password);
         loginPage.getSignInButton().click();
     }
 
-    public void goToRegistrationPage(){
+    public void goToRegistrationPage() {
         loginPage.getRegistrationButton().click();
     }
 
-
-
-    public void insertLoginInLoginField(WebElement webElement, String login) {
-        webElement.sendKeys(login);
+    public void getHostLoginPage(String host) {
+        driver.get(host);
     }
 
-    public void insertPasswordField(WebElement webElement, String password) {
-        webElement.sendKeys(password);
+    public void enterLogin(String login) {
+        loginPage.getLoginField().sendKeys(login);
     }
 
+    public void enterPassword(String password) {
+        loginPage.getPasswordField().sendKeys(password);
+    }
+
+    public void goToMainPageSteps() {
+        loginPage.getSignInButton().click();
+    }
 
 }

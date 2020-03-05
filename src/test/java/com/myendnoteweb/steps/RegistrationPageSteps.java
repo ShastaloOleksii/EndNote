@@ -2,7 +2,9 @@ package com.myendnoteweb.steps;
 
 import com.myendnoteweb.pages.RegistrationPage;
 import com.myendnoteweb.steps.base.BaseStep;
-import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
@@ -52,10 +54,6 @@ public class RegistrationPageSteps extends BaseStep {
         registrationPage.getButtonIAgree().click();
     }
 
-    public void navbarVisibleFinalAssert() {
-        Assert.assertTrue(waitForVisible(registrationPage.getNavbarDefault()));
-    }
-
     public void refreshButtonOfMailBox() {
         registrationPage.getRefreshButtonInMailBox().click();
     }
@@ -88,8 +86,30 @@ public class RegistrationPageSteps extends BaseStep {
         driver.get(urlBefore + email + urlAfter);
     }
 
-    public void switchToWindow(ArrayList<String> tabs, int number){
+    public void switchToWindow(ArrayList<String> tabs, int number) {
         driver.switchTo().window(tabs.get(number));
+    }
+
+    public void waitForMail() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+
+    public void waitForMail2() throws InterruptedException {
+        int index = 50;
+        for (int i = 0; i < index; i++) {
+            if (registrationPage.getMailIsAbsentValue().isDisplayed()) {
+                waitUtils.wait(3);
+                registrationPage.getRefreshButtonInMailBox().click();
+            } else {
+                switchToMailIframe();
+            }
+
+        }
+    }
+
+    public void openWindow() {
+        ((JavascriptExecutor) driver).executeScript("window.open()");
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
     }
 
 

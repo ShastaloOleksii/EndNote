@@ -8,14 +8,15 @@ public class LoginPageTests extends BaseTest {
 
 
     @Test
+
     public void signIn() {
-        getLoginSteps().signIn(getLogin(),getPassword());
+        getLoginSteps().signIn(getHost(), getLogin(), getPassword());
         Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
     }
 
     @Test
     public void signOut() {
-        getLoginSteps().signIn(getLogin(),getPassword());
+        getLoginSteps().signIn(getHost(), getLogin(), getPassword());
         Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
         getMainSteps().goToLogOutPanel();
         Assert.assertTrue(getLoginSteps().isWebElementDisplayedXpath(".//a[contains(@target,'self')]"));
@@ -25,8 +26,10 @@ public class LoginPageTests extends BaseTest {
         Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
 
     }
+
     @Test
     public void clickToRegistrationButtonOnLoginPage() {
+        getLoginSteps().getHostLoginPage(getHost());
         getLoginSteps().goToRegistrationPage();
        /* Wait<WebDriver> wait = new WebDriverWait(driver, 5, 10);
         wait.until(CustomWaiter.visibilityOfElement(registrationButton));

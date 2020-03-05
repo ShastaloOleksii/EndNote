@@ -69,6 +69,13 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = ".//button")
     private WebElement buttonOfTheApprove;
 
+    @FindBy(xpath = ".//center[contains(text(),'Нет писем для')]")
+    private WebElement mailIsAbsentValue;
+
+    public WebElement getMailIsAbsentValue() {
+        return mailIsAbsentValue;
+    }
+
     public WebElement getButtonOfTheApprove() {
         return buttonOfTheApprove;
     }

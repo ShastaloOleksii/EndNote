@@ -8,10 +8,10 @@ public class DownloadsTabTests extends BaseTest {
 
     @Test
     public void loginClickOnTheDownloadsTabHeadingIsPresent() {
-        getLoginSteps().signIn(getLogin(),getPassword());
+        getLoginSteps().signIn(getHost(), getLogin(), getPassword());
         getMainSteps().goToDownloadsPage();
         Assert.assertTrue(getDownloadTabSteps().isWebElementDisplayedXpath("//table[contains(@class,'contnav_lower')]"));
-       // getDownloadTabSteps().downloadsTabPage
+        getDownloadTabSteps().goToCaptureReference();
         getDownloadTabSteps().switchToIFrame();
         Assert.assertTrue(getDownloadTabSteps().isWebElementDisplayedXpath(".//div[contains(@class,'captureHeading')]"));
 

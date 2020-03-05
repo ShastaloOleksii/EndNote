@@ -11,11 +11,10 @@ public class MatchTabSteps extends BaseStep {
     public MatchTabSteps(WebDriver driver) {
         super(driver);
         matchTabPage = pagesProvider.getMatchTabPage();
-        //matchTabPage = PageFactory.initElements(driver, MatchTabPage.class);
     }
 
 
-    public void matchTabHeadingAssert(){
+    public void matchTabHeadingAssert() {
         Assert.assertTrue(matchTabPage.getMatchTabHeading().isDisplayed());
     }
 }

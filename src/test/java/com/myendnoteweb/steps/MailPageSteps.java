@@ -10,6 +10,5 @@ public class MailPageSteps extends BaseStep {
     public MailPageSteps(WebDriver driver) {
         super(driver);
         mailPage = pagesProvider.getMailPage();
-        // mailPage = PageFactory.initElements(driver, MailPage.class);
     }
 }

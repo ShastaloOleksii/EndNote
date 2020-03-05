@@ -9,8 +9,6 @@ public class LogOutSteps extends BaseStep {
 
     public LogOutSteps(WebDriver driver) {
         super(driver);
-
         logOutPage = pagesProvider.getLogOutPage();
-       // logOutPage = PageFactory.initElements(driver, LogOutPage.class);
     }
 }

@@ -1,6 +1,7 @@
 package com.myendnoteweb.tests.base;
 
 import com.myendnoteweb.steps.*;
+import com.myendnoteweb.tests.panel.PanelTests;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
@@ -16,8 +17,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
-public abstract class BaseTest {
+public class BaseTest {
+    private final static Logger LOG = Logger.getLogger(PanelTests.class.getName());
     public static final String PROPERTIES = "src/test/resources/properties/properties.properties";
     public static final String CHROME_DRIVER = "webdriver.chrome.driver";
     private String classAtribute = "class";
@@ -58,7 +61,6 @@ public abstract class BaseTest {
         return mailHost;
     }
 
-
     public String getUrlBefore() {
         return urlBefore;
     }
@@ -72,7 +74,6 @@ public abstract class BaseTest {
     }
 
     public static final int WAIT_TIME = 4;
-
 
     public LogOutSteps getLogOutSteps() {
         return logOutSteps;
@@ -138,7 +139,6 @@ public abstract class BaseTest {
         return password;
     }
 
-
     public String getFirstName() {
         return firstName;
     }
@@ -147,9 +147,9 @@ public abstract class BaseTest {
         return lastName;
     }
 
-
     @Before
     public void setUp() {
+        LOG.info("enter userCanLogin test");
         initProperties();
 
         setFields();
@@ -157,7 +157,6 @@ public abstract class BaseTest {
         System.setProperty(CHROME_DRIVER, chromeDriver);
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
-        driver.get(host);
         driver.manage().window().maximize();
 
         initSteps();
@@ -200,7 +199,7 @@ public abstract class BaseTest {
 
     @After
     public void close() {
-        // driver.quit();
+        driver.quit();
     }
 
 
@@ -213,19 +212,6 @@ public abstract class BaseTest {
         }
 
     }
-
-/*
-    public String getText(WebElement webElement) {
-        return webElement.getText();
-    }
-
-    public String getAttribute(WebElement webElement, String attribute) {
-        return webElement.getAttribute(attribute);
-    }
-
-    public boolean isPanelHidden(WebElement webElement, String attribute, String text) {
-        return webElement.getAttribute(attribute).contains(text);
-    }*/
 
     public boolean isWebElementDisplayedID(String id) {
         try {
@@ -247,7 +233,6 @@ public abstract class BaseTest {
 
     }
 
-
     public String getText(WebElement webElement) {
         return webElement.getText();
     }
@@ -262,14 +247,13 @@ public abstract class BaseTest {
 
 
     public boolean waitForVisible(WebElement web) {
+
         try {
-            //wait.until(ExpectedConditions.visibilityOf(web));
             return true;
         } catch (NoSuchElementException e) {
             return false;
         }
 
     }
-
 
 }

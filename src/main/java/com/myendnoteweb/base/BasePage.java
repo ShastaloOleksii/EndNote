@@ -9,4 +9,9 @@ public class BasePage {
     private WebElement logo;
 
 
+    public WebElement getLogo() {
+        return logo;
+    }
+
+
 }

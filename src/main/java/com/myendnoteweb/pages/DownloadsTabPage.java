@@ -8,7 +8,7 @@ public class DownloadsTabPage extends BasePage {
 
     @FindBy(xpath = ".//a[contains(@title, 'EndNote Capture')]")
     private WebElement endNoteCapture;
-
+//.//div[contains(@id,'bookmarklet')]
     @FindBy(xpath = ".//iframe")
     private WebElement iFrame;
 

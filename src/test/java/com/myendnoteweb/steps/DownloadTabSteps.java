@@ -5,18 +5,19 @@ import com.myendnoteweb.steps.base.BaseStep;
 import org.openqa.selenium.WebDriver;
 
 public class DownloadTabSteps extends BaseStep {
-public DownloadsTabPage downloadsTabPage;
+    public DownloadsTabPage downloadsTabPage;
 
 
     public DownloadTabSteps(WebDriver driver) {
         super(driver);
-
         downloadsTabPage = pagesProvider.getDownloadsTabPage();
-       // downloadsTabPage = PageFactory.initElements(driver, DownloadsTabPage.class);
     }
 
-    public void switchToIFrame(){
+    public void switchToIFrame() {
         driver.switchTo().frame(downloadsTabPage.getiFrame());
     }
 
+    public void goToCaptureReference() {
+        downloadsTabPage.getEndNoteCapture().click();
+    }
 }

@@ -9,9 +9,7 @@ public class FormatTabSteps extends BaseStep {
 
     public FormatTabSteps(WebDriver driver) {
         super(driver);
-
         formatTabPage = pagesProvider.getFormatTabPage();
-       // formatTabPage = PageFactory.initElements(driver, FormatTabPage.class);
     }
 
     public void openFavoriteList() {

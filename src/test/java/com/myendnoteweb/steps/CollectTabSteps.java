@@ -10,17 +10,36 @@ public class CollectTabSteps extends BaseStep {
     public CollectTabSteps(WebDriver driver) {
         super(driver);
         collectTabPage = pagesProvider.getCollectTabPage();
-//        page = new CollectTabPage(driver);
-
     }
 
-    public void doSomething() {
+    public void choiceLBritishLibrary() {
         collectTabPage.getBritishLibrary().click();
-        waitUtils.waitElementToBeClickable(collectTabPage.getSelectSearchConnection());
-        collectTabPage.getSelectSearchConnection().click();
+        /*waitUtils.waitElementToBeClickable(collectTabPage.getSelectSearchConnection());
+        collectTabPage.getSelectSearchConnection().click();*/
     }
 
     public void clickOnSelectSearchConnection() {
         collectTabPage.getSelectSearchConnection().click();
     }
+
+    public void goToSelectFavorites() {
+        collectTabPage.getSelectFavorites().click();
+    }
+
+    public void selectBritishLibraryInFavorites() {
+        collectTabPage.getSelectFavoritesBritishLibrary().click();
+    }
+
+    public void copyToFavoritesButtonClick() {
+        collectTabPage.getCopyToFavoritesButton().click();
+    }
+
+    public void hideFavoritesTable() {
+        collectTabPage.getHideTableOfFavoritesLibrary().click();
+    }
+
+    public  void linkHideTableFavoritePresent(){
+
+    }
+
 }

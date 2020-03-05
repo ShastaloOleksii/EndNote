@@ -8,7 +8,7 @@ public class FormatTabTest extends BaseTest {
 
     @Test
     public void loginClickOnTheFormatTabHeadingIsPresent() {
-        getLoginSteps().signIn(getLogin(),getPassword());
+        getLoginSteps().signIn(getHost(), getLogin(), getPassword());
         getMainSteps().goToFormatPage();
         Assert.assertTrue(getFormatTabSteps().isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
         getFormatTabSteps().openFavoriteList();

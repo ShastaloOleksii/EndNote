@@ -12,10 +12,9 @@ public class OrganizeTabSteps extends BaseStep {
     public OrganizeTabSteps(WebDriver driver) {
         super(driver);
         organizeTabPage = pagesProvider.getOrganizeTabPage();
-//        organizeTabPage= PageFactory.initElements(driver, OrganizeTabPage.class);
     }
 
-    public void organizeHeadingAssert(){
+    public void organizeHeadingAssert() {
         Assert.assertTrue(organizeTabPage.getOrganizeHeading().isDisplayed());
     }
 }
