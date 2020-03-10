@@ -5,7 +5,7 @@
     <test name="Registration Tests Chrome">
         <parameter name="browser" value="chrome" />
         <packages>
-            <package name="ua.ek" />
+            <package name="com.my.endnote.web" />
         </packages>
         <classes>
             <class name="com.my.endnote.web.tests.main.MainPageTests" />
