@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverProvider {
     private static WebDriver driver;
-    public static final int WAIT_TIME = 20;
+    public static final int WAIT_TIME = 10;
 
     public static final String CHROME_DRIVER = "webdriver.chrome.driver";
 

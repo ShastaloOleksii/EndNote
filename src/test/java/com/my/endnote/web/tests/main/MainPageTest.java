@@ -32,7 +32,7 @@ public class MainPageTest extends BaseTest {
     @Test
     public void loginMainTabsMenuIsPresentOnTheMainPage() {
         getLoginSteps().signIn(getHost(), getLogin(), getPassword());
-        Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath("//div[contains(@class,'navbar-default')]"));
+        Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath(".//div[contains(@class,'navbar-default')]"));
     }
 
     @Test

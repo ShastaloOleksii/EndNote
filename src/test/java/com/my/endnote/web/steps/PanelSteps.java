@@ -13,15 +13,19 @@ public class PanelSteps extends BaseStep {
     }
 
     public void panelPresentAssert() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'sideHead')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath(".//form[contains(@name,'hideshowpanel')]/child::input[contains(@value,'hide')]"));
     }
 
     public void panelIsHideAssert() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//form[contains(@name, 'citationSearchForm')]"));
+        Assert.assertTrue(isWebElementDisplayedXpath(".//input[contains(@value,'show')]]"));
     }
 
     public void openedUnfieldTab() {
         panelPage.getUnfiled().click();
+    }
+
+    public void hidePanel(){
+        panelPage.getHidePanel().click();
     }
 
 }
