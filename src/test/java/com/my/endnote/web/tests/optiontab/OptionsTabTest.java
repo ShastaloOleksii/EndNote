@@ -4,7 +4,7 @@ import com.my.endnote.web.tests.base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class OptionsTabTests extends BaseTest {
+public class OptionsTabTest extends BaseTest {
 
     @Test
     public void loginClickOnTheOptionsTabHeadingIsPresent() {

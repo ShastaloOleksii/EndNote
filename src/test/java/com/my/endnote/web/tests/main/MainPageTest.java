@@ -5,15 +5,15 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class MainPageTests extends BaseTest {
+public class MainPageTest extends BaseTest {
 
-
+/*
     @Test
     public void loginMainPageIsOpened() {
         getLoginSteps().signIn(getHost(), getLogin(), getPassword());
         Assert.assertTrue(getMainSteps().isWebElementDisplayedXpath(".//a[contains(text(), 'Show Getting Started Guide')] | .//a[contains(text(), 'Hide Getting Started Guide')]"));
 
-    }
+    }*/
 
     @Test
     public void goToCollectTab() {
