@@ -26,7 +26,11 @@ public class PanelTest extends BaseTest {
     @Test
     public void linkUnFiledIsPresent() {
         getLoginSteps().signIn(getHost(), getLogin(), getPassword());
-        getPanelSteps().openedUnfieldTab();
-        Assert.assertTrue(getPanelSteps().isWebElementDisplayedXpath(".//td[contains(@class,'heading')]"));
+//        getPanelSteps().openedUnfieldTab();
+        if(getMainSteps().isWebElementDisplayedXpath(".//input[contains(@value,'show')]]")){
+            getPanelSteps().openedUnfieldTab();
+        }else {
+            Assert.assertTrue(getPanelSteps().isWebElementDisplayedXpath(".//td[contains(@class,'heading')]"));
+        }
     }
 }
