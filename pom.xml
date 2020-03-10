@@ -22,21 +22,13 @@
                 </configuration>
             </plugin>
             <plugin>
-                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>common.cfg</name>
-                            <value>${basedir}/src/main/resources/common.properties</value>
-                        </property>
-                    </systemProperties>
-                    <!--Путь к конфигурации testng.xml-->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>suits/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    <includes>
+                        <include>Test*.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
