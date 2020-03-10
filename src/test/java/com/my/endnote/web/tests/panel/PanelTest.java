@@ -7,8 +7,8 @@ import org.testng.Assert;
 import java.util.logging.Logger;
 
 
-public class PanelTests extends BaseTest {
-    private final static Logger LOG = Logger.getLogger(PanelTests.class.getName());
+public class PanelTest extends BaseTest {
+    private final static Logger LOG = Logger.getLogger(PanelTest.class.getName());
 
     @Test
     public void panelQuickSearchIsPresent() {

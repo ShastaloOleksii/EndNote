@@ -4,7 +4,7 @@ import com.my.endnote.web.tests.base.BaseTest;
 import org.junit.*;
 import org.openqa.selenium.By;
 
-public class LoginPageTests extends BaseTest {
+public class LoginPageTest extends BaseTest {
 
 
     @Test

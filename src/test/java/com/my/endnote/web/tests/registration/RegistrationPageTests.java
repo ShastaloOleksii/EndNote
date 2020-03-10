@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 //This class was changed
-public class RegistrationPageTest extends BaseTest {
+public class RegistrationPageTests extends BaseTest {
     private String email;
 
     @Test

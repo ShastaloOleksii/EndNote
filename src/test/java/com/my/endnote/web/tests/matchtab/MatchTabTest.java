@@ -4,7 +4,7 @@ import com.my.endnote.web.tests.base.BaseTest;
 import org.junit.Test;
 import org.testng.Assert;
 
-public class MatchTabTests extends BaseTest {
+public class MatchTabTest extends BaseTest {
 
     @Test
     public void loginClickOnTheMatchTabHeadingIsPresent() {

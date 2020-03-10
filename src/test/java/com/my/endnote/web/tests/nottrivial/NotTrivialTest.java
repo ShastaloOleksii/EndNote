@@ -4,7 +4,7 @@ import com.my.endnote.web.tests.base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NotTrivialTests extends BaseTest {
+public class NotTrivialTest extends BaseTest {
 
 
     @Test

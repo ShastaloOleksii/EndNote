@@ -4,7 +4,7 @@ import com.my.endnote.web.tests.base.BaseTest;
 import org.junit.Test;
 import org.testng.Assert;
 
-public class DownloadsTabTests extends BaseTest {
+public class DownloadsTabTest extends BaseTest {
 
     @Test
     public void loginClickOnTheDownloadsTabHeadingIsPresent() {
