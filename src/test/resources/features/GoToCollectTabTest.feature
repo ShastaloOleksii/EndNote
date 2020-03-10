@@ -6,20 +6,23 @@ Feature: Collect Tab Functionality Feature
 
   @CollectTabIsOpened
   Scenario: Check transfer to Collection Tab
-    Given I am on main page
-    When I click on Collect tab
+    Given I am on main page "https://access.clarivate.com/login?app=endnote" "igavudu-5763@yopmail.com" "A123456@"
+    When I am on collect tab page
     Then I am on Collect tab
 
   @OpenTable
   Scenario: The check table of favorite libraries is open
-    Given I am on collect tab page
-    When I click on the text Select Favorites
+    Given I am on main page "https://access.clarivate.com/login?app=endnote" "igavudu-5763@yopmail.com" "A123456@"
+    When I am on collect tab page
+    And I click on the text Select Favorites
     Then I see the tables of favorite libraries
 
 
   @HideTable
   Scenario: The check table of favorite libreries is closed
-    Given I am on collect tab and table is opened
-    When I click on the Hide link
+    Given I am on main page "https://access.clarivate.com/login?app=endnote" "igavudu-5763@yopmail.com" "A123456@"
+    When I am on collect tab page
+    And I click on the text Select Favorites
+    And I click on the Hide link
     Then I see the table is closed
 
