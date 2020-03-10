@@ -24,4 +24,8 @@ public class PanelSteps extends BaseStep {
         panelPage.getUnfiled().click();
     }
 
+    public void hidePanel(){
+        panelPage.getHidePanel().click();
+    }
+
 }
