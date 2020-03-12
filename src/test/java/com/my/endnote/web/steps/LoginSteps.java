@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Description;
 import org.junit.Assert;
 
 public class LoginSteps extends BaseStep {
@@ -17,6 +18,7 @@ public class LoginSteps extends BaseStep {
     }
 
     @Given("^I am on main page \"(.*)\" \"(.*)\" \"(.*)\"$")
+    @Description("This is sign in method get 3 parameters data")
     public void signIn(String url, String login, String password) {
         driver.get(url);
         loginPage.getLoginField().sendKeys(login);
