@@ -14,33 +14,14 @@ public class CollectTabSteps extends BaseStep {
         collectTabPage = pagesProvider.getCollectTabPage();
     }
 
-    public void choiceLBritishLibrary() {
-        collectTabPage.getBritishLibrary().click();
-    }
-
-    public void clickOnSelectSearchConnection() {
-        collectTabPage.getSelectSearchConnection().click();
-    }
-
     @And("I click on the text Select Favorites")
     public void goToSelectFavorites() {
         collectTabPage.getSelectFavorites().click();
     }
 
-    public void selectBritishLibraryInFavorites() {
-        collectTabPage.getSelectFavoritesBritishLibrary().click();
-    }
-
-    public void copyToFavoritesButtonClick() {
-        collectTabPage.getCopyToFavoritesButton().click();
-    }
-
     @And("I click on the Hide link")
     public void hideFavoritesTable() {
         collectTabPage.getHideTableOfFavoritesLibrary().click();
-    }
-
-    public void linkHideTableFavoritePresent() {
     }
 
     @Then("I am on Collect tab")

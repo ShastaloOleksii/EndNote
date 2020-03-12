@@ -14,10 +14,6 @@ public class CollectTabPage extends BasePage {
     @FindBy(xpath = ".//div[contains(@id,'idCustomListLink')]/child::a")
     private WebElement selectFavorites;
 
-    //.//table[contains(@class,'connectFiles')]
-    @FindBy(xpath = ".//select[contains(@id, 'selectConnection')]/child::option[contains(@value,'British Library')]")
-    private WebElement britishLibraryField;
-
     @FindBy(xpath = ".//select[contains(@id, 'selectConnection')]/child::option[contains(@value,'British Library')]")
     private WebElement selectConnectBritishLibrary;
 
@@ -39,20 +35,12 @@ public class CollectTabPage extends BasePage {
         return selectFavorites;
     }
 
-    public WebElement getBritishLibraryField() {
-        return britishLibraryField;
-    }
-
     public WebElement getSelectFavoritesBritishLibrary() {
         return selectConnectBritishLibrary;
     }
 
     public WebElement getCopyToFavoritesButton() {
         return copyToFavoritesButton;
-    }
-
-    public WebElement getSelectConnectBritishLibrary() {
-        return selectConnectBritishLibrary;
     }
 
     public WebElement getHideTableOfFavoritesLibrary() {

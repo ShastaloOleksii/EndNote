@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/java/com/my/endnote/web/tests",
         glue = {"com.my.endnote.web.steps"},
-        tags = "@SignInScenarios",
+        tags = "@DownloadTabTest",
         dryRun = false,
         strict = true,
         plugin = {
@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt"
-
         }
 )
-public class SignInRunnerTests {
+
+public class DownloadsRunnerTests {
 }

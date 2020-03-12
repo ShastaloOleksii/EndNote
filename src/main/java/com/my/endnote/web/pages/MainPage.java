@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends BasePage {
 
-
     @FindBy(id = "lgLink3")
     private WebElement organize;
 
@@ -35,18 +34,6 @@ public class MainPage extends BasePage {
 
     @FindBy(id = "lgLink7")
     private WebElement downloadsTab;
-
-    @FindBy(xpath = ".//a[contains(text(), 'Show Getting Started Guide')]")
-    private WebElement showGettingStartedGuide;
-
-    @FindBy(xpath = "//div[contains(@class,'heading')]")
-    private WebElement collectTabHeading;
-
-    @FindBy(xpath = "//div[contains(@class,'heading')]")
-    private WebElement formatTabHeading;
-
-    @FindBy(xpath = "//span[contains(text(),'Find the Best')]")
-    private WebElement matchTabHeading;
 
     @FindBy(xpath = ".//div[contains(@id,'idError') and .//a[contains(@title,'Learn')]]")
     private WebElement learnAboutEndNote;
@@ -93,22 +80,6 @@ public class MainPage extends BasePage {
 
     public WebElement getDownloadsTab() {
         return downloadsTab;
-    }
-
-    public WebElement getShowGettingStartedGuide() {
-        return showGettingStartedGuide;
-    }
-
-    public WebElement getCollectTabHeading() {
-        return collectTabHeading;
-    }
-
-    public WebElement getFormatTabHeading() {
-        return formatTabHeading;
-    }
-
-    public WebElement getMatchTabHeading() {
-        return matchTabHeading;
     }
 
     public WebElement getLearnAboutEndNote() {

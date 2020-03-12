@@ -8,13 +8,17 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/com/my/endnote/web/tests",
         glue = {"com.my.endnote.web.steps"},
-        tags = "@CollectTabTests",
+        tags = "@FormatTabTest",
         dryRun = false,
         strict = true,
-        monochrome = true,
-        plugin = {"pretty", "html:target/cucumber-reports"}
+        plugin = {
+                "pretty",
+                "html:target/cucumber-reports/cucumber-pretty",
+                "json:target/cucumber-reports/CucumberTestReport.json",
+                "rerun:target/cucumber-reports/rerun.txt"
+
+        }
 )
 
-public class CollectTabRunnerTests {
-
+public class FormatTabRunnerTests {
 }
