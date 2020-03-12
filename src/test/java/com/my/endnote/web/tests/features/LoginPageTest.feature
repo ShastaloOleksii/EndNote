@@ -30,6 +30,7 @@ Feature: SignIn page test
       | abunudonn-0963@yopmail.com     | A123456@ |
       | shastalo.aleksej@tech-stack.io | A120386@ |
 
+
   @CloseDriver
   Scenario: Close driver
-    Then Close 0driver
+    Then Close driver

@@ -9,7 +9,6 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class LoginSteps extends BaseStep {
-
     private LoginPage loginPage;
 
     public LoginSteps() {
@@ -36,10 +35,6 @@ public class LoginSteps extends BaseStep {
         loginPage.getPasswordField().sendKeys(password);
     }
 
-    @And("I entered password (.*?)")
-    public void enterPassword(String password) {
-
-    }
 
     @When("I click on the Registration button")
     public void goToRegistrationPage() {
@@ -69,5 +64,10 @@ public class LoginSteps extends BaseStep {
     @And("^I entered (.*?) multiple$")
     public void I_Entered_Password(String password) {
         loginPage.getPasswordField().sendKeys(password);
+    }
+
+    @Then("I am at Login page")
+    public void i_Am_At_The_Login_Page() {
+        Assert.assertTrue(isWebElementDisplayedID("mat-input-0"));
     }
 }

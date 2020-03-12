@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 public class PagesProvider {
     private LoginPage loginPage;
     private MainPage mainPage;
-    private LogOutPage logOutPage;
     private CollectTabPage collectTabPage;
     private DownloadsTabPage downloadsTabPage;
     private FormatTabPage formatTabPage;
@@ -15,14 +14,11 @@ public class PagesProvider {
     private OptionTabPage optionTabPage;
     private OrganizeTabPage organizeTabPage;
     private PanelPage panelPage;
-    private RegistrationPage registrationPage;
-    private MailPage mailPage;
     private static PagesProvider pagesProvider;
 
     private PagesProvider(WebDriver driver) {
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         mainPage = PageFactory.initElements(driver, MainPage.class);
-        logOutPage = PageFactory.initElements(driver, LogOutPage.class);
         collectTabPage = PageFactory.initElements(driver, CollectTabPage.class);
         downloadsTabPage = PageFactory.initElements(driver, DownloadsTabPage.class);
         formatTabPage = PageFactory.initElements(driver, FormatTabPage.class);
@@ -30,8 +26,6 @@ public class PagesProvider {
         optionTabPage = PageFactory.initElements(driver, OptionTabPage.class);
         organizeTabPage = PageFactory.initElements(driver, OrganizeTabPage.class);
         panelPage = PageFactory.initElements(driver, PanelPage.class);
-        registrationPage = PageFactory.initElements(driver, RegistrationPage.class);
-        mailPage = PageFactory.initElements(driver, MailPage.class);
     }
 
     public static PagesProvider getPagesProvider() {
@@ -50,10 +44,6 @@ public class PagesProvider {
 
     public MainPage getMainPage() {
         return mainPage;
-    }
-
-    public LogOutPage getLogOutPage() {
-        return logOutPage;
     }
 
     public CollectTabPage getCollectTabPage() {
@@ -82,14 +72,6 @@ public class PagesProvider {
 
     public PanelPage getPanelPage() {
         return panelPage;
-    }
-
-    public RegistrationPage getRegistrationPage() {
-        return registrationPage;
-    }
-
-    public MailPage getMailPage() {
-        return mailPage;
     }
 
 
