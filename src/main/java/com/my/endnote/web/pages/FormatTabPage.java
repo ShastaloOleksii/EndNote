@@ -13,5 +13,4 @@ public class FormatTabPage extends BasePage {
     }
 
 
-
 }

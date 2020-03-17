@@ -4,10 +4,12 @@ import com.my.endnote.web.pages.OrganizeTabPage;
 import com.my.endnote.web.steps.base.BaseStep;
 import io.cucumber.java.en.Then;
 
+import java.net.MalformedURLException;
+
 public class OrganizeTabSteps extends BaseStep {
     OrganizeTabPage organizeTabPage;
 
-    public OrganizeTabSteps() {
+    public OrganizeTabSteps() throws MalformedURLException {
         super();
         organizeTabPage = pagesProvider.getOrganizeTabPage();
     }

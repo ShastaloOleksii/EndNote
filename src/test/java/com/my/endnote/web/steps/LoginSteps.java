@@ -9,10 +9,12 @@ import io.cucumber.java.en.When;
 import io.qameta.allure.Description;
 import org.junit.Assert;
 
+import java.net.MalformedURLException;
+
 public class LoginSteps extends BaseStep {
     private LoginPage loginPage;
 
-    public LoginSteps() {
+    public LoginSteps() throws MalformedURLException {
         super();
         loginPage = pagesProvider.getLoginPage();
     }

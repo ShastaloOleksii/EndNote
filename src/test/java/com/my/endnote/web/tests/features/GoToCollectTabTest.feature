@@ -17,7 +17,6 @@ Feature: Collect Tab Functionality Feature
     And I click on the text Select Favorites
     Then I see the tables of favorite libraries
 
-
   @HideTable
   Scenario: The check table of favorite libreries is closed
     Given I am on main page "https://access.clarivate.com/login?app=endnote" "igavudu-5763@yopmail.com" "A123456@"

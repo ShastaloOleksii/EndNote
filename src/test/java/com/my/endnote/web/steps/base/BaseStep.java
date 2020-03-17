@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 public class BaseStep {
@@ -17,7 +18,7 @@ public class BaseStep {
     protected WaitUtils waitUtils;
     protected PagesProvider pagesProvider;
 
-    public BaseStep() {
+    public BaseStep() throws MalformedURLException {
         driver = DriverProvider.getDriver();
         waitUtils = WaitUtils.getWaitUtils(20);
         pagesProvider = PagesProvider.getPagesProvider();

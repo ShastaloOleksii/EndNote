@@ -8,7 +8,6 @@ public class BasePage {
     @FindBy(xpath = ".//img[contains(@alt,'Clarivate Analytics')]")
     private WebElement logo;
 
-
     public WebElement getLogo() {
         return logo;
     }

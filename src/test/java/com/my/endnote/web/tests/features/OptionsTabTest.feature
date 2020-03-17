@@ -1,8 +1,8 @@
 @OptionsTabTests
 Feature: Options Tab Functionality Feature
 
-In order to ensure Options Tab Functionality works,
-I want to run the cucumber test to verify it is working
+  In order to ensure Options Tab Functionality works,
+  I want to run the cucumber test to verify it is working
 
   @OptionsTabIsOpened
   Scenario: Check transfer to Options Tab

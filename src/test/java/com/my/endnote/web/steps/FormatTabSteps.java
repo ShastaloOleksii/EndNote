@@ -7,10 +7,12 @@ import io.cucumber.java.en.Then;
 import io.qameta.allure.Description;
 import org.testng.Assert;
 
+import java.net.MalformedURLException;
+
 public class FormatTabSteps extends BaseStep {
     FormatTabPage formatTabPage;
 
-    public FormatTabSteps() {
+    public FormatTabSteps() throws MalformedURLException {
         super();
         formatTabPage = pagesProvider.getFormatTabPage();
     }
