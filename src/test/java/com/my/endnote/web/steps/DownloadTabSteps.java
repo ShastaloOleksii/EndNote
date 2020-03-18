@@ -6,10 +6,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.net.MalformedURLException;
+
 public class DownloadTabSteps extends BaseStep {
     public DownloadsTabPage downloadsTabPage;
 
-    public DownloadTabSteps() {
+    public DownloadTabSteps() throws MalformedURLException {
         super();
         downloadsTabPage = pagesProvider.getDownloadsTabPage();
     }

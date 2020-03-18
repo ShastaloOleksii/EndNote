@@ -23,7 +23,7 @@ public class MainPage extends BasePage {
     @FindBy(id = "lgLink1")
     private WebElement myReferencesTab;
 
-    @FindBy(id = "lgLink2")
+    @FindBy(xpath = ".//a[contains(@id,'lgLink2')]")
     private WebElement collectTab;
 
     @FindBy(xpath = ".//a[contains(@target,'self')]")

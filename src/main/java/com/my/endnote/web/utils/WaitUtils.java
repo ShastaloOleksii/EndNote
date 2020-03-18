@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -20,7 +21,7 @@ public class WaitUtils {
         wait = new WebDriverWait(driver, timeoutSeconds);
     }
 
-    public static WaitUtils getWaitUtils(int timeoutSeconds) {
+    public static WaitUtils getWaitUtils(int timeoutSeconds) throws MalformedURLException {
         if (!waitUtils.containsKey(timeoutSeconds)) {
             waitUtils.put(timeoutSeconds, new WaitUtils(DriverProvider.getDriver(), timeoutSeconds));
         }
@@ -34,9 +35,11 @@ public class WaitUtils {
     public void waitElementToBeClickable(WebElement web) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(web));
+
         } catch (TimeoutException e) {
             e.printStackTrace();
         }
+        web.click();
     }
 
     public void waitVisibilityOf(WebElement web) {

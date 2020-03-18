@@ -2,18 +2,23 @@ package com.my.endnote.web.steps;
 
 import com.my.endnote.web.pages.MainPage;
 import com.my.endnote.web.steps.base.BaseStep;
+import com.my.endnote.web.utils.WaitUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.net.MalformedURLException;
+
 public class MainSteps extends BaseStep {
     private MainPage mainPage;
+    private WaitUtils waitUtils;
 
-    public MainSteps() {
+    public MainSteps() throws MalformedURLException {
         super();
         mainPage = pagesProvider.getMainPage();
     }
+
 
     public MainPage getMainPage() {
         return mainPage;
