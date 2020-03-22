@@ -5,16 +5,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends BasePage {
 
-    @FindBy(id = "lgLink3")
+    @FindBy(xpath = ".//a[contains(@id,'lgLink3')]")
     private WebElement organize;
 
-    @FindBy(id = "lgLink6")
+    @FindBy(id = ".//a[contains(@id,'lgLink6')]")
     private WebElement options;
 
     @FindBy(xpath = ".//a[contains(text(), 'Hide Getting Started Guide')]")
     private WebElement hideGettingStartedGuide;
 
-    @FindBy(id = "lgLink5")
+    @FindBy(id = ".//a[contains(@id,'lgLink5')]")
     private WebElement matchTab;
 
     @FindBy(xpath = ".//img[@id='proSmallImg']")
@@ -29,10 +29,10 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//a[contains(@target,'self')]")
     private WebElement logOutRef;
 
-    @FindBy(id = "lgLink4")
+    @FindBy(xpath = ".//a[contains(@id,'lgLink4')]")
     private WebElement formatTab;
 
-    @FindBy(id = "lgLink7")
+    @FindBy(xpath = ".//a[contains(@id,'lgLink7')]")
     private WebElement downloadsTab;
 
     @FindBy(xpath = ".//div[contains(@id,'idError') and .//a[contains(@title,'Learn')]]")

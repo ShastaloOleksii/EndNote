@@ -1,4 +1,4 @@
-package com.my.endnote.web.runner;
+package com.my.endnote.web.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/com/my/endnote/web/tests",
         glue = {"com.my.endnote.web.steps"},
-        tags = "@OrganizeTabTests",
+        tags = "@Smoke or @CloseDriver",
         dryRun = false,
         strict = true,
         plugin = {
@@ -20,5 +20,5 @@ import org.junit.runner.RunWith;
         }
 )
 
-public class OrganizeTabRunnerTests {
+public class SmokeRunnerTests {
 }
