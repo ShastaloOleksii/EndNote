@@ -10,26 +10,26 @@ import org.testng.Assert;
 import java.net.MalformedURLException;
 
 public class FormatTabSteps extends BaseStep {
-    FormatTabPage formatTabPage;
+  FormatTabPage formatTabPage;
 
-    public FormatTabSteps() throws MalformedURLException {
-        super();
-        formatTabPage = pagesProvider.getFormatTabPage();
-    }
+  public FormatTabSteps() throws MalformedURLException {
+    super();
+    formatTabPage = pagesProvider.getFormatTabPage();
+  }
 
-    @And("I am opened Select Favorites table")
-    @Description("This method is opened Favorite")
-    public void openFavoriteList() {
-        formatTabPage.getSelectFavaorites().click();
-    }
+  @And("I am opened Select Favorites table")
+  @Description("This method is opened Favorite")
+  public void openFavoriteList() {
+    formatTabPage.getSelectFavaorites().click();
+  }
 
-    @Then("I am on format tab")
-    public void I_Am_Go_Format_Tab() {
-        Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
-    }
+  @Then("I am on format tab")
+  public void I_Am_Go_Format_Tab() {
+    Assert.assertTrue(isWebElementDisplayedXpath("//div[contains(@class,'heading')]"));
+  }
 
-    @Then("The Select Favorites table is opened")
-    public void selectFavoritesTablePresent() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//table[contains(@class, 'connectFiles')]"));
-    }
+  @Then("The Select Favorites table is opened")
+  public void selectFavoritesTablePresent() {
+    Assert.assertTrue(isWebElementDisplayedXpath(".//table[contains(@class, 'connectFiles')]"));
+  }
 }

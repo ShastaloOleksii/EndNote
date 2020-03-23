@@ -8,19 +8,19 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 
 public class CustomWaiter {
 
-    public static ExpectedCondition<Boolean> visibilityOfElement(final WebElement webElement) {
-        return new ExpectedCondition<Boolean>() {
-            @Override
-            public Boolean apply(WebDriver webDriver) {
-                try {
-                    return webElement.isDisplayed();
-                } catch (NoSuchElementException e) {
-                    return false;
-                } catch (StaleElementReferenceException e) {
-                    return false;
-                }
-            }
-        };
-    }
+  public static ExpectedCondition<Boolean> visibilityOfElement(final WebElement webElement) {
+    return new ExpectedCondition<Boolean>() {
+      @Override
+      public Boolean apply(WebDriver webDriver) {
+        try {
+          return webElement.isDisplayed();
+        } catch (NoSuchElementException e) {
+          return false;
+        } catch (StaleElementReferenceException e) {
+          return false;
+        }
+      }
+    };
+  }
 
 }
