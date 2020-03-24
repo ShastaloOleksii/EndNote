@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/java/com/my/endnote/web/tests",
+    features = "src/test/resources/",
     glue = {"com.my.endnote.web.steps"},
     dryRun = false,
     strict = true,
