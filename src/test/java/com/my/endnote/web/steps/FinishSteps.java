@@ -8,11 +8,11 @@ import java.net.MalformedURLException;
 
 public class FinishSteps extends BaseStep {
 
-    public FinishSteps() throws MalformedURLException {
-    }
+  public FinishSteps() throws MalformedURLException {
+  }
 
-    @Then("Close driver")
-    public void cleanUp() {
-        ProviderCleaner.cleanUp();
-    }
+  @Then("Close driver")
+  public void cleanUp() {
+    ProviderCleaner.cleanUp();
+  }
 }

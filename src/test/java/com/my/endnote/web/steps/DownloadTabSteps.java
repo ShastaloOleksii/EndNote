@@ -9,26 +9,26 @@ import org.junit.Assert;
 import java.net.MalformedURLException;
 
 public class DownloadTabSteps extends BaseStep {
-    public DownloadsTabPage downloadsTabPage;
+  public DownloadsTabPage downloadsTabPage;
 
-    public DownloadTabSteps() throws MalformedURLException {
-        super();
-        downloadsTabPage = pagesProvider.getDownloadsTabPage();
-    }
+  public DownloadTabSteps() throws MalformedURLException {
+    super();
+    downloadsTabPage = pagesProvider.getDownloadsTabPage();
+  }
 
-    @Then("The Capture Reference is opened")
-    public void switchToIFrame() {
-        driver.switchTo().frame(downloadsTabPage.getiFrame());
-        Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@class,'pagecntnav1')]/child::div[contains(@class,'captureHeading')]"));
-    }
+  @Then("The Capture Reference is opened")
+  public void switchToIFrame() {
+    driver.switchTo().frame(downloadsTabPage.getiFrame());
+    Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@class,'pagecntnav1')]/child::div[contains(@class,'captureHeading')]"));
+  }
 
-    @And("I am opened Capture Reference")
-    public void goToCaptureReference() {
-        downloadsTabPage.getEndNoteCapture().click();
-    }
+  @And("I am opened Capture Reference")
+  public void goToCaptureReference() {
+    downloadsTabPage.getEndNoteCapture().click();
+  }
 
-    @Then("I am on Downloads tab")
-    public void presentOnDownloadsTabPageVerifi() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@class,'summary_TopBox')]"));
-    }
+  @Then("I am on Downloads tab")
+  public void presentOnDownloadsTabPageVerifi() {
+    Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@class,'summary_TopBox')]"));
+  }
 }

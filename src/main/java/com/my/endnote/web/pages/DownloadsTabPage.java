@@ -5,18 +5,18 @@ import org.openqa.selenium.support.FindBy;
 
 public class DownloadsTabPage extends BasePage {
 
-    @FindBy(xpath = ".//a[contains(@title, 'EndNote Capture')]")
-    private WebElement endNoteCapture;
+  @FindBy(xpath = ".//a[contains(@title, 'EndNote Capture')]")
+  private WebElement endNoteCapture;
 
-    @FindBy(xpath = ".//iframe")
-    private WebElement iFrame;
+  @FindBy(xpath = ".//iframe")
+  private WebElement iFrame;
 
-    public WebElement getiFrame() {
-        return iFrame;
-    }
+  public WebElement getiFrame() {
+    return iFrame;
+  }
 
-    public WebElement getEndNoteCapture() {
-        return endNoteCapture;
-    }
+  public WebElement getEndNoteCapture() {
+    return endNoteCapture;
+  }
 
 }

@@ -9,35 +9,35 @@ import org.junit.Assert;
 import java.net.MalformedURLException;
 
 public class CollectTabSteps extends BaseStep {
-    private CollectTabPage collectTabPage;
+  private CollectTabPage collectTabPage;
 
-    public CollectTabSteps() throws MalformedURLException {
-        super();
-        collectTabPage = pagesProvider.getCollectTabPage();
-    }
+  public CollectTabSteps() throws MalformedURLException {
+    super();
+    collectTabPage = pagesProvider.getCollectTabPage();
+  }
 
-    @And("I click on the text Select Favorites")
-    public void goToSelectFavorites() {
-        collectTabPage.getSelectFavorites().click();
-    }
+  @And("I click on the text Select Favorites")
+  public void goToSelectFavorites() {
+    collectTabPage.getSelectFavorites().click();
+  }
 
-    @And("I click on the Hide link")
-    public void hideFavoritesTable() {
-        collectTabPage.getHideTableOfFavoritesLibrary().click();
-    }
+  @And("I click on the Hide link")
+  public void hideFavoritesTable() {
+    collectTabPage.getHideTableOfFavoritesLibrary().click();
+  }
 
-    @Then("I am on Collect tab")
-    public void i_am_on_Collect_tab() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@id,'idCustomListLink')]/child::a"));
-    }
+  @Then("I am on Collect tab")
+  public void i_am_on_Collect_tab() {
+    Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@id,'idCustomListLink')]/child::a"));
+  }
 
-    @Then("I see the tables of favorite libraries")
-    public void I_See_The_Tables_Of_Favorite_Libraries() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//span[contains(@id,'idHideCustomListLink')]"));
-    }
+  @Then("I see the tables of favorite libraries")
+  public void I_See_The_Tables_Of_Favorite_Libraries() {
+    Assert.assertTrue(isWebElementDisplayedXpath(".//span[contains(@id,'idHideCustomListLink')]"));
+  }
 
-    @Then("I see the table is closed")
-    public void I_See_The_Table_Is_Closed() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@id,'idCustomListLink')]/child::a"));
-    }
+  @Then("I see the table is closed")
+  public void I_See_The_Table_Is_Closed() {
+    Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@id,'idCustomListLink')]/child::a"));
+  }
 }

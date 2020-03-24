@@ -9,35 +9,35 @@ import org.testng.Assert;
 import java.net.MalformedURLException;
 
 public class MatchTabSteps extends BaseStep {
-    MatchTabPage matchTabPage;
+  MatchTabPage matchTabPage;
 
-    public MatchTabSteps() throws MalformedURLException {
-        super();
-        matchTabPage = pagesProvider.getMatchTabPage();
-    }
+  public MatchTabSteps() throws MalformedURLException {
+    super();
+    matchTabPage = pagesProvider.getMatchTabPage();
+  }
 
-    @And("I am entered title \"(.*)\"$")
-    public void enterTitle(String title) {
-        matchTabPage.getTitleField().sendKeys(title);
-    }
+  @And("I am entered title \"(.*)\"$")
+  public void enterTitle(String title) {
+    matchTabPage.getTitleField().sendKeys(title);
+  }
 
-    @And("I am entered abstract \"(.*)\"$")
-    public void enterAbstract(String abstractText) {
-        matchTabPage.getAbstractField().sendKeys(abstractText);
-    }
+  @And("I am entered abstract \"(.*)\"$")
+  public void enterAbstract(String abstractText) {
+    matchTabPage.getAbstractField().sendKeys(abstractText);
+  }
 
-    @Then("I am on Match tab")
-    public void matchTabHeadingAssert() {
-        Assert.assertTrue(matchTabPage.getMatchTabHeading().isDisplayed());
-    }
+  @Then("I am on Match tab")
+  public void matchTabHeadingAssert() {
+    Assert.assertTrue(matchTabPage.getMatchTabHeading().isDisplayed());
+  }
 
-    @Then("page with jornals is opened")
-    public void clickButtonFindJornals() {
-        Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'jou_match')]"));
-    }
+  @Then("page with jornals is opened")
+  public void clickButtonFindJornals() {
+    Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'jou_match')]"));
+  }
 
-    @And("I am clicking on the button Find Jornals")
-    public void clickFindJornalButton() {
-        matchTabPage.getFindJornalsButton().click();
-    }
+  @And("I am clicking on the button Find Jornals")
+  public void clickFindJornalButton() {
+    matchTabPage.getFindJornalsButton().click();
+  }
 }
