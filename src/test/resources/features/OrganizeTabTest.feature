@@ -1,4 +1,3 @@
-@OrganizeTabTests
 Feature: Organize Tab Functionality Feature
 
   In order to ensure Organize Tab Functionality works,

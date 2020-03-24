@@ -1,4 +1,3 @@
-@OptionsTabTests
 Feature: Options Tab Functionality Feature
 
   In order to ensure Options Tab Functionality works,

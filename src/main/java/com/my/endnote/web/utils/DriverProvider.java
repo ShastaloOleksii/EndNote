@@ -17,7 +17,7 @@ public class DriverProvider {
   public static final String GRID = "grid";
   public static final String CHROME = "chrome";
   public static final String FILE = "wd/hub";
-  public static final String PORT = "5555";
+  public static final String PORT = "9999";
   public static final String HOST = "http://192.168.88.183";
   private static WebDriver driver;
   public static final int WAIT_TIME = 10;
@@ -32,6 +32,7 @@ public class DriverProvider {
 
   private static void createDriver() throws MalformedURLException {
     String driverName = System.getProperty(DRIVER_TYPE, CHROME);
+    System.out.println(driverName);
     switch (driverName) {
       case GRID:
         String port = System.getProperty("grid_port", PORT);
@@ -53,7 +54,6 @@ public class DriverProvider {
     options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
     options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
     options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-    options.addArguments("headless");
     return options;
   }
 
