@@ -32,7 +32,6 @@ public class DriverProvider {
 
   private static void createDriver() throws MalformedURLException {
     String driverName = System.getProperty(DRIVER_TYPE, CHROME);
-    System.out.println(driverName);
     switch (driverName) {
       case GRID:
         String port = System.getProperty("grid_port", PORT);
