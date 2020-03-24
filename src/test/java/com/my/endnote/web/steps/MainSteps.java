@@ -93,7 +93,7 @@ public class MainSteps extends BaseStep {
 
   @Then("The logo is present on main page")
   public void logoIsPresentOnMainPage() {
-    Assert.assertTrue(isWebElementDisplayedXpath("//img[contains(@alt,'Clarivate Analytics')]"));
+    Assert.assertTrue(isWebElementDisplayedXpath(".//img[contains(@alt,'Clarivate Analytics')]//parent::*"));
   }
 
   @Then("The localization panel is present on mane page")
@@ -103,12 +103,15 @@ public class MainSteps extends BaseStep {
 
   @Then("The attribute \"class\" is present")
   public void attributeClassPresent() {
+    if (isWebElementDisplayedXpath(".//a[contains(text(), 'Hide Getting Started Guide')]")) {
+      mainPage.getHideGettingStartedGuide().click();
+    }
     Assert.assertTrue(attributes(mainPage.getLearnAboutEndNote(), "class"));
   }
 
-  @Then("The attribute \"alt\" is present")
+  @Then("The attribute \"title\" is present")
   public void attributeAltPresent() {
-    Assert.assertTrue(attributes(mainPage.getFormatTab(), "alt"));
+    Assert.assertTrue(attributes(mainPage.getFormatTab(), "title"));
   }
 
 }

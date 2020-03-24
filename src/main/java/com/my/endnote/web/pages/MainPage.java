@@ -8,13 +8,13 @@ public class MainPage extends BasePage {
   @FindBy(xpath = ".//a[contains(@id,'lgLink3')]")
   private WebElement organize;
 
-  @FindBy(id = ".//a[contains(@id,'lgLink6')]")
+  @FindBy(xpath = ".//a[contains(@id,'lgLink6')]")
   private WebElement options;
 
   @FindBy(xpath = ".//a[contains(text(), 'Hide Getting Started Guide')]")
   private WebElement hideGettingStartedGuide;
 
-  @FindBy(id = ".//a[contains(@id,'lgLink5')]")
+  @FindBy(xpath = ".//a[contains(@id,'lgLink5')]")
   private WebElement matchTab;
 
   @FindBy(xpath = ".//img[@id='proSmallImg']")
@@ -29,7 +29,7 @@ public class MainPage extends BasePage {
   @FindBy(xpath = ".//a[contains(@target,'self')]")
   private WebElement logOutRef;
 
-  @FindBy(xpath = ".//a[contains(@id,'lgLink4')]")
+  @FindBy(xpath = ".//a[contains(@alt,'Format references')]")
   private WebElement formatTab;
 
   @FindBy(xpath = ".//a[contains(@id,'lgLink7')]")

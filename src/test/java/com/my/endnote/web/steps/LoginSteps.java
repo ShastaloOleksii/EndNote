@@ -57,7 +57,10 @@ public class LoginSteps extends BaseStep {
 
   @Then("I see main page")
   public void I_See_Main_Page() {
-    Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'navbar navbar-default')]"));
+    if (isWebElementDisplayedXpath(".//a[contains(text(), 'Hide Getting Started Guide')]")) {
+      Assert.assertTrue(isWebElementDisplayedXpath(".//div[contains(@class,'gsg_Title')]"));
+    }
+    Assert.assertTrue(isWebElementDisplayedXpath(".//td[contains(@id,'idFoderDesc')]"));
   }
 
   @When("^I entered login (.*?) multiples$")
