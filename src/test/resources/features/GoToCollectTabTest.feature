@@ -1,4 +1,3 @@
-@CollectTabTests
 Feature: Collect Tab Functionality Feature
 
   In order to ensure Collect Tab Functionality works,

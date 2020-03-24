@@ -1,4 +1,3 @@
-@DownloadTabTest
 Feature: Downloads Tab Functionality Feature
 
   In order to ensure Download Tab Functionality works,

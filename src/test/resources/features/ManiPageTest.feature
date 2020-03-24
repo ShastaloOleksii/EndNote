@@ -1,4 +1,3 @@
-@MainPageTest
 Feature: Format Tab Functionality Feature
 
   In order to ensure Format Tab Functionality works,

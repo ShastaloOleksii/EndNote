@@ -1,4 +1,3 @@
-@SearchPanel
 Feature: Search panel Functionality Feature
 
   In order to ensure panel of search Functionality works,

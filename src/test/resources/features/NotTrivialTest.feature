@@ -1,4 +1,3 @@
-@NotTrivialTest
 Feature: Checking not trivial scenarios
 
   In order to ensure that Functionality works,

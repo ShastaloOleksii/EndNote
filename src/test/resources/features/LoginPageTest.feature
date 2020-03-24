@@ -1,4 +1,3 @@
-@SignInScenarios
 Feature: SignIn page test
 
   In order to ensure SignIn page works,

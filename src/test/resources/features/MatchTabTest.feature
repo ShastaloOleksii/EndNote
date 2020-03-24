@@ -1,4 +1,3 @@
-@MatchTabTest
 Feature: Match Tab Functionality Feature
 
   In order to ensure Match Tab Functionality works,
