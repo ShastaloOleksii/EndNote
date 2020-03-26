@@ -15,7 +15,6 @@
         <driver_type>chrome</driver_type>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <profiles>
         <profile>
             <id>grid</id>
@@ -54,7 +53,6 @@
             </build>
         </profile>
     </profiles>
-
     <build>
         <plugins>
             <plugin>
