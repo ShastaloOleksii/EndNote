@@ -16,7 +16,7 @@ Feature: SignIn page test
     When I click on the Registration button
     Then I see Registration page
 
-
+  @Regression
   Scenario Outline: Checking process multiple Sign in
     Given The SignIn page is opened "https://access.clarivate.com/login?app=endnote"
     When I entered login <login> multiples

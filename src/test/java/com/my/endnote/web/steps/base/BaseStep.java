@@ -28,9 +28,8 @@ public class BaseStep {
 
   public boolean isWebElementDisplayedXpath(String xpath) {
     try {
-      return driver.findElement(By.xpath(xpath)).isDisplayed();
+      return driver.findElement(By.xpath(xpath)).isEnabled();
     } catch (NoSuchElementException e) {
-      System.out.println("The test is fail, web element is absent on the page");
       return false;
     }
   }
@@ -40,7 +39,6 @@ public class BaseStep {
       driver.findElement(By.id(id));
       return true;
     } catch (NoSuchElementException e) {
-      System.out.println("The test is fail, web element is absent on the page");
       return false;
     }
   }
