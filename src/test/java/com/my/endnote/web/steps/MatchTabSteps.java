@@ -6,13 +6,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 
-import java.net.MalformedURLException;
-
 public class MatchTabSteps extends BaseStep {
   MatchTabPage matchTabPage;
 
-  public MatchTabSteps() throws MalformedURLException {
-    super();
+  public MatchTabSteps() {
     matchTabPage = pagesProvider.getMatchTabPage();
   }
 

@@ -29,7 +29,3 @@ Feature: Checking not trivial scenarios
     When I am go to Options tab page
     And I click to logo
     Then I see main page
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver

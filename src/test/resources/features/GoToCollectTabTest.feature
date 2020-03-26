@@ -24,7 +24,3 @@ Feature: Collect Tab Functionality Feature
     And I click on the Hide link
     Then I see the table is closed
 
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver
-

@@ -4,8 +4,6 @@ import com.my.endnote.web.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.net.MalformedURLException;
-
 public class PagesProvider {
   private LoginPage loginPage;
   private MainPage mainPage;
@@ -30,7 +28,7 @@ public class PagesProvider {
     panelPage = PageFactory.initElements(driver, PanelPage.class);
   }
 
-  public static PagesProvider getPagesProvider() throws MalformedURLException {
+  public static PagesProvider getPagesProvider() {
     if (pagesProvider == null)
       pagesProvider = new PagesProvider(DriverProvider.getDriver());
     return pagesProvider;

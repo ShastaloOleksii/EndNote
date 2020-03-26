@@ -16,7 +16,7 @@ Feature: SignIn page test
     When I click on the Registration button
     Then I see Registration page
 
-
+  @Regression
   Scenario Outline: Checking process multiple Sign in
     Given The SignIn page is opened "https://access.clarivate.com/login?app=endnote"
     When I entered login <login> multiples
@@ -28,7 +28,5 @@ Feature: SignIn page test
       | larrekuppan-1516@yopmail.com   | A120386@ |
       | abunudonn-0963@yopmail.com     | A123456@ |
       | shastalo.aleksej@tech-stack.io | A120386@ |
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver
+      | aaattt-4855@yopmail.com        | A120386@ |
+      | bbttt-4855@yopmail.com         | A120386@ |
