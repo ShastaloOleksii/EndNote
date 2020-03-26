@@ -13,7 +13,7 @@ public class Constants {
 
 
   public static final String DEFAULT_FILE = "wd/hub";
-  public static final String DEFAULT_PORT = "9999";
+  public static final String DEFAULT_PORT = "5555";
   public static final String DEFAULT_HOST = "http://192.168.88.183";
 
   public static final int IMPLICITLY_WAIT_TIME = 20;
