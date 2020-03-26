@@ -16,9 +16,9 @@ public class Constants {
   public static final String DEFAULT_PORT = "5555";
   public static final String DEFAULT_HOST = "http://192.168.88.183";
 
-  public static final int IMPLICITLY_WAIT_TIME = 20;
+  public static final int IMPLICITLY_WAIT_TIME = 10;
 
-  public static final String DEFAULT_WAIT_TIME = "20";
+  public static final String DEFAULT_WAIT_TIME = "10";
 
   public static final String CHROME_DRIVER = "webdriver.chrome.driver";
 }

@@ -21,42 +21,6 @@
             <id>grid</id>
             <properties>
                 <driver_type>grid</driver_type>
-                <grid_port>9999</grid_port>
-                <grid_host>http://192.168.88.183</grid_host>
-                <grid_file>wd/hub</grid_file>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <systemProperties>
-                                <property>
-                                    <name>driver_type</name>
-                                    <value>${driver_type}</value>
-                                </property>
-                                <property>
-                                    <name>grid_port</name>
-                                    <value>${grid_port}</value>
-                                </property>
-                                <property>
-                                    <name>grid_host</name>
-                                    <value>${grid_host}</value>
-                                </property>
-                                <property>
-                                    <name>grid_file</name>
-                                    <value>${grid_file}</value>
-                                </property>
-                            </systemProperties>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>gridS</id>
-            <properties>
-                <driver_type>grid</driver_type>
                 <grid_port>5555</grid_port>
                 <grid_host>http://192.168.88.183</grid_host>
                 <grid_file>wd/hub</grid_file>
