@@ -11,40 +11,41 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
+
+import static com.my.endnote.web.utils.Constants.*;
 
 public class DriverProvider {
-  public static final String DRIVER_TYPE = "driver_type";
-  public static final String GRID = "grid";
-  public static final String CHROME = "chrome";
-  public static final String FILE = "wd/hub";
-  public static final String PORT = "9999";
-  public static final String HOST = "http://192.168.88.183";
+  private static final Logger LOGGER = Logger.getLogger(DriverProvider.class.getName());
   private static WebDriver driver;
-  public static final int WAIT_TIME = 10;
-  public static final String CHROME_DRIVER = "webdriver.chrome.driver";
 
-  public static WebDriver getDriver() throws MalformedURLException {
+  public static WebDriver getDriver() {
     if (driver == null) {
       createDriver();
     }
     return driver;
   }
 
-  private static void createDriver() throws MalformedURLException {
+  private static void createDriver() {
     String driverName = System.getProperty(DRIVER_TYPE, CHROME);
+    LOGGER.info("Using driver " + driverName);
     switch (driverName) {
       case GRID:
-        String port = System.getProperty("grid_port", PORT);
-        String host = System.getProperty("grid_host", HOST);
-        String file = System.getProperty("grid_file", FILE);
-        driver = new RemoteWebDriver(new URL(host + ":" + port + "/" + file), getChromeOptions());
+        String port = System.getProperty(GRID_PORT, DEFAULT_PORT);
+        String host = System.getProperty(GRID_HOST, DEFAULT_HOST);
+        String file = System.getProperty(GRID_FILE, DEFAULT_FILE);
+        try {
+          driver = new RemoteWebDriver(new URL(host + ":" + port + "/" + file), getChromeOptions());
+        } catch (MalformedURLException e) {
+          new RuntimeException(e);
+        }
         break;
       case CHROME:
         System.setProperty(CHROME_DRIVER, "src/test/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
-    driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(IMPLICITLY_WAIT_TIME, TimeUnit.SECONDS);
   }
 
   private static ChromeOptions getChromeOptions() {

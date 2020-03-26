@@ -6,13 +6,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import java.net.MalformedURLException;
-
 public class PanelSteps extends BaseStep {
   PanelPage panelPage;
 
-  public PanelSteps() throws MalformedURLException {
-    super();
+  public PanelSteps() {
     panelPage = pagesProvider.getPanelPage();
   }
 

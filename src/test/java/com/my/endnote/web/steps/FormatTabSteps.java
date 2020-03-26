@@ -4,21 +4,16 @@ import com.my.endnote.web.pages.FormatTabPage;
 import com.my.endnote.web.steps.base.BaseStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.qameta.allure.Description;
 import org.testng.Assert;
-
-import java.net.MalformedURLException;
 
 public class FormatTabSteps extends BaseStep {
   FormatTabPage formatTabPage;
 
-  public FormatTabSteps() throws MalformedURLException {
-    super();
+  public FormatTabSteps() {
     formatTabPage = pagesProvider.getFormatTabPage();
   }
 
   @And("I am opened Select Favorites table")
-  @Description("This method is opened Favorite")
   public void openFavoriteList() {
     formatTabPage.getSelectFavaorites().click();
   }

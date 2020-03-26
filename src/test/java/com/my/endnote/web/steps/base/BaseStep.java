@@ -10,17 +10,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-import java.net.MalformedURLException;
 import java.time.Duration;
+
+import static com.my.endnote.web.utils.Constants.DEFAULT_WAIT_TIME;
+import static com.my.endnote.web.utils.Constants.WAIT_TIME;
 
 public class BaseStep {
   protected WebDriver driver;
   protected WaitUtils waitUtils;
   protected PagesProvider pagesProvider;
 
-  public BaseStep() throws MalformedURLException {
+  public BaseStep() {
     driver = DriverProvider.getDriver();
-    waitUtils = WaitUtils.getWaitUtils(20);
+    waitUtils = WaitUtils.getWaitUtils(Integer.parseInt(System.getProperty(WAIT_TIME, DEFAULT_WAIT_TIME)));
     pagesProvider = PagesProvider.getPagesProvider();
   }
 

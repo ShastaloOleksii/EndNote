@@ -6,21 +6,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Description;
 import org.junit.Assert;
-
-import java.net.MalformedURLException;
 
 public class LoginSteps extends BaseStep {
   private LoginPage loginPage;
 
-  public LoginSteps() throws MalformedURLException {
-    super();
+  public LoginSteps() {
     loginPage = pagesProvider.getLoginPage();
   }
 
   @Given("^I am on main page \"(.*)\" \"(.*)\" \"(.*)\"$")
-  @Description("This is sign in method get 3 parameters data")
   public void signIn(String url, String login, String password) {
     driver.get(url);
     loginPage.getLoginField().sendKeys(login);

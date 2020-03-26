@@ -28,7 +28,5 @@ Feature: SignIn page test
       | larrekuppan-1516@yopmail.com   | A120386@ |
       | abunudonn-0963@yopmail.com     | A123456@ |
       | shastalo.aleksej@tech-stack.io | A120386@ |
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver
+      | aaattt-4855@yopmail.com        | A120386@ |
+      | bbttt-4855@yopmail.com         | A120386@ |

@@ -12,30 +12,59 @@
         <cucumber.version>5.4.1</cucumber.version>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.2</allure.version>
+        <driver_type>chrome</driver_type>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <build>
+    <profiles>
+        <profile>
+            <id>grid</id>
+            <properties>
+                <driver_type>grid</driver_type>
+                <grid_port>9999</grid_port>
+                <grid_host>http://192.168.88.183</grid_host>
+                <grid_file>wd/hub</grid_file>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemProperties>
+                                <property>
+                                    <name>driver_type</name>
+                                    <value>${driver_type}</value>
+                                </property>
+                                <property>
+                                    <name>grid_port</name>
+                                    <value>${grid_port}</value>
+                                </property>
+                                <property>
+                                    <name>grid_host</name>
+                                    <value>${grid_host}</value>
+                                </property>
+                                <property>
+                                    <name>grid_file</name>
+                                    <value>${grid_file}</value>
+                                </property>
+                            </systemProperties>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.17</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit47</artifactId>
-                        <version>2.17</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -52,7 +81,7 @@
                         </property>
                         <property>
                             <name>driver_type</name>
-                            <value>grid</value>
+                            <value>${driver_type}</value>
                         </property>
                     </systemProperties>
                     <systemPropertyVariables>
@@ -66,11 +95,10 @@
                         <version>1.2.0</version>
                     </dependency>
                     <dependency>
-                    <groupId>org.aspectj</groupId>
-                    <artifactId>aspectjweaver</artifactId>
-                    <version>${aspectj.version}</version>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
                     </dependency>
-
                 </dependencies>
             </plugin>
             <plugin>
@@ -101,16 +129,9 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
-
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
@@ -152,18 +173,8 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations-java5</artifactId>
-            <version>RELEASE</version>
+            <version>19.0.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M4</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -192,14 +203,14 @@
             <version>${cucumber.version}</version>
         </dependency>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>1.2.6</version>
             <type>pom</type>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>1.2.6</version>
             <type>pom</type>
@@ -239,25 +250,14 @@
             <version>1.2.0</version>
         </dependency>
         <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjweaver</artifactId>
-        <version>${aspectj.version}</version>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>1.4.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.detro</groupId>
-            <artifactId>ghostdriver</artifactId>
-            <version>2.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.temyers</groupId>
-            <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>5.0.0</version>
-        </dependency>
-
     </dependencies>
 </project>

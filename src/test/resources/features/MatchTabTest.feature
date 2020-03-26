@@ -17,7 +17,3 @@ Feature: Match Tab Functionality Feature
     And I am entered abstract "animals"
     And I am clicking on the button Find Jornals
     Then page with jornals is opened
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver

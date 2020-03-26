@@ -8,7 +8,3 @@ Feature: Options Tab Functionality Feature
     Given I am on main page "https://access.clarivate.com/login?app=endnote" "igavudu-5763@yopmail.com" "A123456@"
     When I am go to Options tab page
     Then I am on the Options tab
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver

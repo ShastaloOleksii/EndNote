@@ -8,7 +8,3 @@ Feature: Organize Tab Functionality Feature
     Given I am on main page "https://access.clarivate.com/login?app=endnote" "igavudu-5763@yopmail.com" "A123456@"
     When I am go to Organize tab page
     Then I am on the Organize tab
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver

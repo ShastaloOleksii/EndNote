@@ -6,13 +6,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-import java.net.MalformedURLException;
-
 public class OptionTabSteps extends BaseStep {
   OptionTabPage optionTabPage;
 
-  public OptionTabSteps() throws MalformedURLException {
-    super();
+  public OptionTabSteps() {
     optionTabPage = pagesProvider.getOptionTabPage();
   }
 

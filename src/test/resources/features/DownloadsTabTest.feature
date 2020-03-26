@@ -15,7 +15,3 @@ Feature: Downloads Tab Functionality Feature
     When I am go to Downloads tab page
     And I am opened Capture Reference
     Then The Capture Reference is opened
-
-  @CloseDriver
-  Scenario: Close driver
-    Then Close driver
