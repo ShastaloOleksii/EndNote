@@ -7,10 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
-import java.time.Duration;
 
 import static com.my.endnote.web.utils.Constants.DEFAULT_WAIT_TIME;
 import static com.my.endnote.web.utils.Constants.WAIT_TIME;
@@ -28,7 +24,7 @@ public class BaseStep {
 
   public boolean isWebElementDisplayedXpath(String xpath) {
     try {
-      return driver.findElement(By.xpath(xpath)).isEnabled();
+      return driver.findElement(By.xpath(xpath)).isDisplayed();
     } catch (NoSuchElementException e) {
       return false;
     }
@@ -57,17 +53,8 @@ public class BaseStep {
     try {
       return driver.findElement(By.xpath(xpath)).isEnabled();
     } catch (NoSuchElementException e) {
-      System.out.println("The test is fail, web element is absent on the page");
       return false;
     }
-  }
-
-  public String fluentWait(WebElement webElement, int waitTime, int milisek) {
-    Wait<WebDriver> wait = new FluentWait<>(driver)
-        .withTimeout(Duration.ofSeconds(waitTime))
-        .pollingEvery(Duration.ofMillis(milisek))
-        .ignoring(NoSuchElementException.class);
-    return wait.until(driver -> webElement.getText());
   }
 
 
