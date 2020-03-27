@@ -20,7 +20,7 @@
             <id>grid</id>
             <properties>
                 <driver_type>grid</driver_type>
-                <grid_port>5555</grid_port>
+                <grid_port>9999</grid_port>
                 <grid_host>http://localhost</grid_host>
                 <grid_file>wd/hub</grid_file>
             </properties>
