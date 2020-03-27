@@ -15,13 +15,12 @@
         <driver_type>chrome</driver_type>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <profiles>
         <profile>
             <id>grid</id>
             <properties>
                 <driver_type>grid</driver_type>
-                <grid_port>9999</grid_port>
+                <grid_port>5555</grid_port>
                 <grid_host>http://192.168.88.183</grid_host>
                 <grid_file>wd/hub</grid_file>
             </properties>
@@ -54,7 +53,6 @@
             </build>
         </profile>
     </profiles>
-
     <build>
         <plugins>
             <plugin>
